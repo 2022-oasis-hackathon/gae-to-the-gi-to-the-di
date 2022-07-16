@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+        <title>수어 프로그램</title>
+        
+    </head>
+
+
+
+    <body>
+        <h1>수어? 쉬워!</h1>
+        <h2>교육</h2>
+        <ul>
+            <li><a href="education">교육</a></li>
+            <li><a href="education">번역</a></li>
+            <li><a href="education">기타</a></li>
+
+        </ul>
+        
+        <div class="booth">
+            <canvas id="canvas" width="800" height="600"></canvas>
+            <video id="video" width="800" height="600" style="display:none"></video>
+            
+        </div>
+
+
+
+
+
+
+
+
+        <script src="{{ url_for('static', filename='js/video.js') }}"></script>
+    </body>
+</html>
