@@ -14,11 +14,11 @@ import sign
 app = Flask(__name__)
 
 ################################################## test 시 주석 해제 -> 테스트용 링크 클릭
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
-mp_pose = mp.solutions.pose
+# mp_drawing = mp.solutions.drawing_utils
+# mp_drawing_styles = mp.solutions.drawing_styles
+# mp_pose = mp.solutions.pose
 
-video = cv2.VideoCapture(1)
+# video = cv2.VideoCapture(1)
 ##################################################
 
 @app.route('/') # 홈페이지
