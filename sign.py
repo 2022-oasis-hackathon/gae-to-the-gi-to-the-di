@@ -29,16 +29,26 @@ knn = cv2.ml.KNearest_create()
 knn.train(angle, cv2.ml.ROW_SAMPLE, label)
 
 
+array = {
+    0 : '네',
+    1 : '아니오',
+    2 : '싫어',
+    3 : '괜찮아',
+    4 : '감사합니다',
+    5 : '미안합니다',
+    6 : '좋아'
+}
 
+checklist = [0,0,0,0,0 ,0,0,0]
 
-
-
-
+none_count = 0
 
 
 
 # 영상 input
 def gen(video):
+    
+    global checklist
     
     while True:
         
@@ -82,7 +92,7 @@ def gen(video):
                 
                     ## 좌표 정보 처리
                     landmarks = results.pose_landmarks.landmark
-                    print(landmarks[12].x ,landmarks[11].x)
+                    #print(landmarks[12].x ,landmarks[11].x)
         
         
         
@@ -123,9 +133,9 @@ def gen(video):
                             ret, results, neighbours, dist = knn.findNearest(data, 3)
                             idx = int(results[0][0])
                         
-                            if idx in rps_gesture.keys():
+                            if idx in gesture.keys():
                                 #print(rps_gesture[idx])
-                                rps_result.append(rps_gesture[idx])
+                                rps_result.append(gesture[idx])
 
                         print(rps_result)
                         
@@ -141,12 +151,18 @@ def gen(video):
                         
                         
                         if len(landmarks2) > 0:
-                            print(landmarks2[0].landmark[0].x)
+                            pass
+                            #print(landmarks2[0].landmark[0].x)
                             
                             
                         # 사전 만들기 - input = 포즈 : landmarks 손 : landmarks2 제스처 : rps_result
-                        sign_dic.check(landmarks, landmarks2, rps_result)
-
+                        
+                        result = sign_dic.check(landmarks, landmarks2, rps_result)
+                        
+                        checklist[int(result)] += 1
+                        
+                        
+                        
                     # 웹캠 이미지 전송
                     ret, jpeg = cv2.imencode('.jpg', image)
                     frame = jpeg.tobytes()
@@ -156,6 +172,9 @@ def gen(video):
                 
 # image input    
 def image():
+    
+    global checklist, none_count
+    
     
     IMAGE_FILES = ['canvas.png']
     
@@ -185,7 +204,7 @@ def image():
                     continue
                 
                 landmarks = results.pose_landmarks.landmark
-                print(landmarks[12].x ,landmarks[11].x)
+                #print(landmarks[12].x ,landmarks[11].x)
                     
                 
                 
@@ -218,23 +237,63 @@ def image():
                             ret, results, neighbours, dist = knn.findNearest(data, 3)
                             idx = int(results[0][0])
                         
-                            if idx in rps_gesture.keys():
+                            if idx in gesture.keys():
                                 #print(rps_gesture[idx])
-                                rps_result.append(rps_gesture[idx])
+                                rps_result.append(gesture[idx])
                         
                     print(rps_result)
                     
                     
                     
                     landmarks2 = results2.multi_hand_landmarks
-                    if len(landmarks2) > 0:
-                        print(landmarks2[0].landmark[0].x)
+                    
             
     
-                    sign_dic.check(landmarks, landmarks2, rps_result)
-            
-                   
+                    result = sign_dic.check(landmarks, landmarks2, rps_result)
+                    if result != None:
+                        checklist[result] += 1
+                    else:
+                        none_count += 1
+                    print(checklist)
+                    
+                    # 예
+                    if checklist[0] > 0:
+                        print(array[0])
+                        checklist = [0 for i in range(len(checklist))]
+                        
+                    # 아니오
+                    elif checklist[1] > 0:
+                        if checklist[2] > 0:
+                            print(array[1])
+                            checklist = [0 for i in range(len(checklist))]
+                    
+                    # 싫어
+                    elif checklist[3] > 0:
+                        print(array[2])
+                        checklist = [0 for i in range(len(checklist))]
 
-    
+                    # 괜찮아
+                    elif checklist[4] > 0:
+                        print(array[3])
+                        checklist = [0 for i in range(len(checklist))]
+                    
+                    #미안 감사
+                    elif checklist[5] > 0:
+                        if checklist[6] > 0:
+                            print(array[5]) # 미안합니다
+                            checklist = [0 for i in range(len(checklist))]
+                        else:
+                            print(array[4]) # 감사합니다
+                            checklist = [0 for i in range(len(checklist))]
+                    
+                    # 좋다
+                    elif checklist[7] > 0:
+                        print(array[6])
+                        checklist = [0 for i in range(len(checklist))]
+                    
+                    # 아무 행동도 없을 시 초기화
+                    elif none_count > 5:
+                        checklist = [0 for i in range(len(checklist))]
+                        none_count = 0
            
             
