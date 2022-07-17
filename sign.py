@@ -5,6 +5,9 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
+import sign_dic
+
+
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -133,9 +136,16 @@ def gen(video):
                         
                         # 좌표 정보 처리
                         landmarks2 = results2.multi_hand_landmarks
+                        
+                        
+                        
+                        
                         if len(landmarks2) > 0:
                             print(landmarks2[0].landmark[0].x)
-        
+                            
+                            
+                        # 사전 만들기 - input = 포즈 : landmarks 손 : landmarks2 제스처 : rps_result
+                        sign_dic.check(landmarks, landmarks2, rps_result)
 
                     # 웹캠 이미지 전송
                     ret, jpeg = cv2.imencode('.jpg', image)
@@ -221,7 +231,7 @@ def image():
                         print(landmarks2[0].landmark[0].x)
             
     
-
+                    sign_dic.check(landmarks, landmarks2, rps_result)
             
                    
 
