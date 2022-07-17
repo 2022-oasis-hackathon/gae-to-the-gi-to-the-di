@@ -50,6 +50,12 @@ def canvas_image():
 
 
 
+@app.route('/translation')
+def translation():
+    return render_template('translation.html')
+
+
+
 @app.route('/test') # 서버에서 촬영, 인식, 처리, 결과 전송
 def video_feed():
 		

@@ -36,10 +36,11 @@ array = {
     3 : '괜찮아',
     4 : '감사합니다',
     5 : '미안합니다',
-    6 : '좋아'
+    6 : '좋아',
+    7 : '너'
 }
 
-checklist = [0,0,0,0,0 ,0,0,0]
+checklist = [0,0,0,0,0 ,0,0,0, 0]
 
 none_count = 0
 
@@ -130,6 +131,7 @@ def gen(video):
 
                             # Inference gesture
                             data = np.array([angle], dtype=np.float32)
+                            
                             ret, results, neighbours, dist = knn.findNearest(data, 3)
                             idx = int(results[0][0])
                         
@@ -291,6 +293,10 @@ def image():
                         print(array[6])
                         checklist = [0 for i in range(len(checklist))]
                     
+                    elif checklist[8] > 0:
+                        print(array[7])
+                        checklist = [0 for i in range(len(checklist))]
+                
                     # 아무 행동도 없을 시 초기화
                     elif none_count > 5:
                         checklist = [0 for i in range(len(checklist))]

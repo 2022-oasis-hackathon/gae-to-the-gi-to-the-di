@@ -11,7 +11,8 @@ array = {
     4 : '괜찮아',
     5 : '감사합니다',
     6 : '미안합니다',
-    7 : '좋다'
+    7 : '좋다',
+    8 : '너'
 }
 
 
@@ -80,3 +81,41 @@ def check(landmarks, landmarks2, rps_result):
         if abs(landmarks[0].x - landmarks2[0].landmark[5].x) < 0.03 and abs(landmarks[0].y - landmarks2[0].landmark[5].y) < 0.03:
             if abs(landmarks2[0].landmark[6].x - landmarks2[0].landmark[10].x) < 0.03 and   abs(landmarks2[0].landmark[14].x - landmarks2[0].landmark[18].x) < 0.03:
                 return 7
+            
+            
+            
+    # 너
+    if len(landmarks2) == 1:
+        if landmarks2[0].landmark[3].x < landmarks2[0].landmark[8].x:
+            if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[7].x) < 0.02 and abs(landmarks2[0].landmark[6].x - landmarks2[0].landmark[5].x) < 0.02:
+                if abs(landmarks2[0].landmark[8].y - landmarks2[0].landmark[7].y) < 0.02 and abs(landmarks2[0].landmark[6].y - landmarks2[0].landmark[5].y) < 0.02:
+                    return 8
+    # 이름
+    
+    # 무엇
+    
+    # 어디
+    
+    # 살아
+    
+    # 좋아하는
+    
+    # 음식
+    
+    # 어제
+    
+    # 뭐하고
+    
+    # 놀았어
+    
+    # 나
+    
+    # 밥
+    
+    # 먹으러
+    
+    # 가자
+    
+    # 같이
+    
+    
