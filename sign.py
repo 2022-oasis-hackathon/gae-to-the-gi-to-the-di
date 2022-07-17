@@ -86,6 +86,7 @@ def gen(video):
         
         
                     if results2.multi_hand_landmarks:
+                        rps_result = []
                         for hand_landmarks in results2.multi_hand_landmarks:
                             mp_drawing.draw_landmarks(
                                 image,
@@ -120,9 +121,10 @@ def gen(video):
                             idx = int(results[0][0])
                         
                             if idx in rps_gesture.keys():
-                                print(rps_gesture[idx])
-                        
-                        
+                                #print(rps_gesture[idx])
+                                rps_result.append(rps_gesture[idx])
+
+                        print(rps_result)
                         
                         
                         
@@ -179,9 +181,10 @@ def image():
                 
                 
                 if results2.multi_hand_landmarks:
-                    
+                    rps_result = []
                     
                     for res in results2.multi_hand_landmarks:
+                        
                             joint = np.zeros((21, 3))
                             for j, lm in enumerate(res.landmark):
                                 joint[j] = [lm.x, lm.y, lm.z]
@@ -206,9 +209,10 @@ def image():
                             idx = int(results[0][0])
                         
                             if idx in rps_gesture.keys():
-                                print(rps_gesture[idx])
-                    
-                    
+                                #print(rps_gesture[idx])
+                                rps_result.append(rps_gesture[idx])
+                        
+                    print(rps_result)
                     
                     
                     
