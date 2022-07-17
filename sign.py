@@ -163,9 +163,9 @@ def gen(video):
                             
                         # 사전 만들기 - input = 포즈 : landmarks 손 : landmarks2 제스처 : rps_result
                         
-                        result = sign_dic.check(landmarks, landmarks2, rps_result)
+                        #result = sign_dic.check(landmarks, landmarks2, rps_result)
                         
-                        checklist[int(result)] += 1
+                        #checklist[int(result)] += 1
                         
                         
                         
