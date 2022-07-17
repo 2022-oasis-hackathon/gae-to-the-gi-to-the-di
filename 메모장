@@ -28,7 +28,7 @@
 손: 왼손 - landmarks2[0].landmark[0~21].x y
     오른손 - landmarks2[1].landmark[0~21].x y
 
-
+제스처 : rps_gesture[idx] 로 판단
 
 
 
