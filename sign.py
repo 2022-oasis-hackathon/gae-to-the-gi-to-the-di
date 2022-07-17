@@ -37,10 +37,14 @@ array = {
     4 : '감사합니다',
     5 : '미안합니다',
     6 : '좋아',
-    7 : '너'
+    7 : '너',
+    8 : '이름',
+    9 : '무엇',
+    10 : '어디',
+    11 : '살다'
 }
 
-checklist = [0,0,0,0,0 ,0,0,0, 0]
+checklist = [0,0,0,0,0 ,0,0,0,0,0, 0,0,0]
 
 none_count = 0
 
@@ -268,6 +272,10 @@ def image():
                         if checklist[2] > 0:
                             print(array[1])
                             checklist = [0 for i in range(len(checklist))]
+                        # 살다
+                        elif checklist[12] > 0:
+                            print(array[11])
+                            checklist = [0 for i in range(len(checklist))]
                     
                     # 싫어
                     elif checklist[3] > 0:
@@ -293,9 +301,27 @@ def image():
                         print(array[6])
                         checklist = [0 for i in range(len(checklist))]
                     
+                    # 너
                     elif checklist[8] > 0:
                         print(array[7])
                         checklist = [0 for i in range(len(checklist))]
+                        
+                    # 이름
+                    elif checklist[9] > 0:
+                        print(array[8])
+                        checklist = [0 for i in range(len(checklist))]
+                        
+                    # 무엇
+                    elif checklist[10] > 0:
+                        print(array[9])
+                        checklist = [0 for i in range(len(checklist))]
+                    
+                    # 어디
+                    elif checklist[11] > 0:
+                        print(array[10])
+                        checklist = [0 for i in range(len(checklist))]
+                    
+                    
                 
                     # 아무 행동도 없을 시 초기화
                     elif none_count > 5:

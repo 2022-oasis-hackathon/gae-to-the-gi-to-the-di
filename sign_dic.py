@@ -12,7 +12,12 @@ array = {
     5 : '감사합니다',
     6 : '미안합니다',
     7 : '좋다',
-    8 : '너'
+    8 : '너',
+    9 : '이름',
+    10 : '무엇',
+    11 : '어디',
+    12 : '살다'
+    
 }
 
 
@@ -33,7 +38,8 @@ def check(landmarks, landmarks2, rps_result):
         if landmarks2[0].landmark[8].y < landmarks2[0].landmark[7].y and landmarks2[1].landmark[8].y < landmarks2[1].landmark[7].y:
             if abs(landmarks2[0].landmark[12].y - landmarks2[0].landmark[16].y) < 0.05 and abs(landmarks2[0].landmark[16].y - landmarks2[0].landmark[20].y) < 0.05:
                 if landmarks2[0].landmark[8].x < landmarks2[0].landmark[4].x and landmarks2[1].landmark[4].x < landmarks2[1].landmark[8].x:
-                    return 1
+                    if landmarks2[0].landmark[8].y > landmarks[0].y and landmarks2[1].landmark[8].y > landmarks[0].y:
+                        return 1
     # 아니오2
     if len(landmarks2) > 1:
         if landmarks2[0].landmark[4].x < landmarks2[0].landmark[8].x and landmarks2[1].landmark[8].x < landmarks2[1].landmark[4].x: # 양손 엄지 검지 위치
@@ -90,13 +96,34 @@ def check(landmarks, landmarks2, rps_result):
             if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[7].x) < 0.02 and abs(landmarks2[0].landmark[6].x - landmarks2[0].landmark[5].x) < 0.02:
                 if abs(landmarks2[0].landmark[8].y - landmarks2[0].landmark[7].y) < 0.02 and abs(landmarks2[0].landmark[6].y - landmarks2[0].landmark[5].y) < 0.02:
                     return 8
+    
     # 이름
-    
+    if len(landmarks2) == 1:
+        if landmarks2[0].landmark[8].y < landmarks2[0].landmark[10].y and landmarks2[0].landmark[10].y < landmarks2[0].landmark[4].y:
+            if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[4].x) < 0.1: # 엄지 검지 끝 x축이 비슷
+                if landmarks[12].x < landmarks2[0].landmark[8].x and landmarks2[0].landmark[8].x < landmarks[10].x:
+                    if landmarks[12].y < landmarks2[0].landmark[8].y:
+                        return 9
+                
     # 무엇
-    
+    if len(landmarks2) == 1:
+        if rps_result[0] == 'one':
+            if landmarks2[0].landmark[8].y < landmarks2[0].landmark[5].y:
+                return 10
+        
     # 어디
-    
-    # 살아
+    if len(landmarks2) == 1:
+        if landmarks2[0].landmark[4].x < landmarks2[0].landmark[8].x and landmarks2[0].landmark[12].x < landmarks2[0].landmark[16].x and landmarks2[0].landmark[16].x < landmarks2[0].landmark[20].x:
+            if landmarks2[0].landmark[4].y > landmarks2[0].landmark[3].y and landmarks2[0].landmark[8].y > landmarks2[0].landmark[7].y and landmarks2[0].landmark[12].y > landmarks2[0].landmark[11].y:
+                if landmarks[11].y < landmarks2[0].landmark[0].y:
+                    return 11
+    # 살다
+    if len(landmarks2) > 1:
+        if landmarks2[0].landmark[8].y < landmarks2[0].landmark[7].y and landmarks2[1].landmark[8].y < landmarks2[1].landmark[7].y:
+            if abs(landmarks2[0].landmark[12].y - landmarks2[0].landmark[16].y) < 0.05 and abs(landmarks2[0].landmark[16].y - landmarks2[0].landmark[20].y) < 0.05:
+                if landmarks2[0].landmark[8].x < landmarks2[0].landmark[4].x and landmarks2[1].landmark[4].x < landmarks2[1].landmark[8].x:
+                    if landmarks2[0].landmark[8].y < landmarks[0].y and landmarks2[1].landmark[8].y < landmarks[0].y:
+                        return 12
     
     # 좋아하는
     
