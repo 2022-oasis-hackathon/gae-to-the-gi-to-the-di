@@ -115,13 +115,14 @@ def image():
                 landmarks = results.pose_landmarks.landmark
                 print(landmarks[12].x ,landmarks[11].x)
                     
-                print('Handedness:', results2.multi_handedness)
+                #print('Handedness:', results2.multi_handedness)
                 
                 if not results2.multi_hand_landmarks:
                     continue
             
                 landmarks2 = results2.multi_hand_landmarks
-                print(landmarks2) 
+                if len(landmarks2) > 0:
+                    print(landmarks2[0].landmark[0].x)
             
     
         
