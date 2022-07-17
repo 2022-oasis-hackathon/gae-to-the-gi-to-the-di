@@ -13,13 +13,12 @@ mp_pose = mp.solutions.pose
 mp_hands = mp.solutions.hands
 
 gesture = {
-    0:'fist', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five',
-    6:'six', 7:'rock', 8:'spiderman', 9:'yeah', 10:'ok',
+    0:'너는', 1:'이름', 2:'뭐야?', 3:'어디', 4:'살다', 5:'좋다',
 }
-rps_gesture = {0:'rock', 5:'paper', 9:'scissors'}
+#rps_gesture = {0:'rock', 5:'paper', 9:'scissors', }
 
 
-file = np.genfromtxt('data/gesture_train.csv', delimiter=',')
+file = np.genfromtxt('data/gesture_data.csv', delimiter=',')
 angle = file[:,:-1].astype(np.float32)
 label = file[:, -1].astype(np.float32)
 knn = cv2.ml.KNearest_create()
@@ -119,8 +118,8 @@ def gen(video):
                             ret, results, neighbours, dist = knn.findNearest(data, 3)
                             idx = int(results[0][0])
                         
-                            if idx in rps_gesture.keys():
-                                print(rps_gesture[idx])
+                            if idx in gesture.keys():
+                                print(gesture[idx])
                         
                         
                         
@@ -205,8 +204,8 @@ def image():
                             ret, results, neighbours, dist = knn.findNearest(data, 3)
                             idx = int(results[0][0])
                         
-                            if idx in rps_gesture.keys():
-                                print(rps_gesture[idx])
+                            if idx in gesture.keys():
+                                print(gesture[idx])
                     
                     
                     

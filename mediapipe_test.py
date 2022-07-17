@@ -22,7 +22,7 @@ data = ""
 
 flag = False
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)ㅁㅁㅁㅁ
 with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
@@ -35,7 +35,7 @@ with mp_hands.Hands(
             continue
 
         # To improve performance, optionally mark the image as not writeable to
-        # pass by reference.
+        # pass by reference.a
         image.flags.writeable = False
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         results = hands.process(image)
