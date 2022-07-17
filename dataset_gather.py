@@ -26,6 +26,7 @@ def click(event, x, y, flags, param):
     global data, file
     if event == cv2.EVENT_LBUTTONDOWN:
         file = np.vstack((file, data))
+        print(data)
         print(file.shape)
 
 cv2.namedWindow('Dataset')
@@ -70,6 +71,7 @@ while cap.isOpened():
             mp_drawing.draw_landmarks(img, res, mp_hands.HAND_CONNECTIONS)
 
     cv2.imshow('Dataset', img)
+
     if cv2.waitKey(1) == ord('q'):
         break
 
