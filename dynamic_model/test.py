@@ -10,7 +10,17 @@ for gpu in gpus:
   tf.config.experimental.set_memory_growth(gpu, True)
 
 #actions = ['여러분','안녕하세요','발표', ,'시작']
-actions = ['everyone','hello','presentation','start']
+actions = [
+    '안녕하세요',
+    '여러분',
+    '발표',
+    '시작',
+    '오늘',
+    '하루',
+    '어떻게',
+    '보내다'
+]
+actions = ['everyone','hello','presentation','start','how','today', 'day','spend']
 seq_length = 30
 
 model = load_model('dynamic_model/models/model.h5')
