@@ -40,7 +40,9 @@ const array2 = {
 
 
 
-
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+}
 
 
 
@@ -48,23 +50,46 @@ const array2 = {
 
 
 var keys = Object.keys(array)
+shuffle(keys)
+var i = 0;
+function now_text(){
+    source.src = array[keys[i]]
+    edu_video.load();
+    edu_video.play();
+    
+    document.getElementById('sign_text').innerHTML=keys[i];
+    document.getElementById('n__1__________________________').innerHTML=array2[keys[i]];
+}
 
 
+
+
+
+// 시작 눌렀을 때 10개 단어 랜덤 순서 
 start.addEventListener('click', ()=>{
 
     // 버튼 사라짐
     start.style.display = 'none';
 
     //선택 단어 영상 출력
-    let rPick = Math.floor(Math.random() * keys.length);
+
     
-    source.src = array[keys[rPick]]
-    edu_video.load();
-    edu_video.play();
+    now_text();
+
+    
+
+
+    
+
+    // let rPick = Math.floor(Math.random() * keys.length);
+    
+    // source.src = array[keys[rPick]]
+    // edu_video.load();
+    // edu_video.play();
     
     
-    document.getElementById('sign_text').innerHTML=keys[rPick];
-    document.getElementById('n__1__________________________').innerHTML=array2[keys[rPick]];
+    // document.getElementById('sign_text').innerHTML=keys[rPick];
+    // document.getElementById('n__1__________________________').innerHTML=array2[keys[rPick]];
 
 
 
