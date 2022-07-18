@@ -1,10 +1,9 @@
 from flask import Flask, render_template, Response, request
-import mediapipe as mp
 import base64
 from PIL import Image
 import re
 from io import BytesIO
-import cv2
+
 
 # 파일 import
 import sign
@@ -13,35 +12,31 @@ import sign
 
 app = Flask(__name__)
 
-################################################## test 시 주석 해제 -> 테스트용 링크 클릭
-# mp_drawing = mp.solutions.drawing_utils
-# mp_drawing_styles = mp.solutions.drawing_styles
-# mp_pose = mp.solutions.pose
 
-# video = cv2.VideoCapture(1)
-##################################################
 
 @app.route('/') # 홈페이지
 def index():
     return render_template('index.html')
 
-@app.route('/education') # 웹에서 촬영-> 서버로 전송-> 포즈 인식-> 정보 처리-> 결과 전송 # 현재 골격 표시는 안(못) 하고 있음
-def edu():
+@app.route('/education') # 학습 페이지 
+def education():
     return render_template('edu.html')
 
 
-@app.route('/canvas_image', methods=('GET', 'POST')) # ajax로 0.5초마다 이미지 받아옴
+@app.route('/canvas_image', methods=('GET', 'POST')) # ajax로 0.5초마다 이미지 받아옴 // 이미지 전송, 응답 라우트
 def canvas_image():
     
-    
+    # 클라이언트에서 요청이 있으면
     if request.method == "POST":
         
+        # Base64로 넘어온 data를 img형태로 변환
         image_data = re.sub('^data:image/.+;base64,', '', request.form['imageBase64'])
         
         im = Image.open(BytesIO(base64.b64decode(image_data)))
-        
+        # 이미지 서버에 저장
         im.save('canvas.png')
         
+        # 체크
         sign.image() # 골격 정보 체크 함수
         
         
@@ -54,15 +49,6 @@ def canvas_image():
 def translation():
     return render_template('translation.html')
 
-
-
-@app.route('/test') # 서버에서 촬영, 인식, 처리, 결과 전송
-def video_feed():
-		
-    global video
-
-    return Response(sign.gen(video),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 

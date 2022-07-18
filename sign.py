@@ -1,20 +1,22 @@
 # 골격 체크 파일
 
-
 import cv2
 import mediapipe as mp
 import numpy as np
 
+# 파일 import
 import sign_dic
 
 
-
+# mediapipe 변수
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 
 mp_pose = mp.solutions.pose
 mp_hands = mp.solutions.hands
 
+
+# 제스처 번호
 gesture = {
     0:'fist', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five',
     6:'six', 7:'rock', 8:'spiderman', 9:'yeah', 10:'ok',
@@ -22,6 +24,7 @@ gesture = {
 rps_gesture = {0:'rock', 5:'paper', 9:'scissors'}
 
 
+# 제스처 모델 import
 file = np.genfromtxt('data/gesture_train.csv', delimiter=',')
 angle = file[:,:-1].astype(np.float32)
 label = file[:, -1].astype(np.float32)
@@ -29,6 +32,8 @@ knn = cv2.ml.KNearest_create()
 knn.train(angle, cv2.ml.ROW_SAMPLE, label)
 
 
+
+# 단어 사전
 array = {
     0 : '네',
     1 : '아니오',
@@ -50,137 +55,12 @@ array = {
     17 : '가자'
 }
 
+# 현재 동작 번호
 checklist = [0,0,0,0,0 ,0,0,0,0,0, 0,0,0,0,0, 0,0,0,0]
 
+# 무동작 시 체크 변수
 none_count = 0
-
-
-
-# 영상 input
-def gen(video):
-    
-    global checklist
-    
-    while True:
-        
-        
-        with mp_pose.Pose(
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5) as pose:
-            
-            with mp_hands.Hands(
-                model_complexity=0,
-                min_detection_confidence=0.5,
-                min_tracking_confidence=0.5) as hands:
-            
-            
-                while video.isOpened():
-                    success, image = video.read()
-                    image = cv2.flip(image, 1) #inversed frame
-                    if not success:
-                        print("Ignoring empty camera frame.")
-                        # If loading a video, use 'break' instead of 'continue'.
-                        continue
-
-                    
-                    image.flags.writeable = False
-                    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                    results = pose.process(image)
-                    results2 = hands.process(image)
-                    
-                    
-                    image.flags.writeable = True
-                    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-                    
-                    
-                    
-                    mp_drawing.draw_landmarks(
-                        image,
-                        results.pose_landmarks,
-                        mp_pose.POSE_CONNECTIONS,
-                        landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-                
-                
-                    ## 좌표 정보 처리
-                    landmarks = results.pose_landmarks.landmark
-                    #print(landmarks[12].x ,landmarks[11].x)
-        
-        
-        
-        
-        
-                    if results2.multi_hand_landmarks:
-                        rps_result = []
-                        for hand_landmarks in results2.multi_hand_landmarks:
-                            mp_drawing.draw_landmarks(
-                                image,
-                                hand_landmarks,
-                                mp_hands.HAND_CONNECTIONS,
-                                mp_drawing_styles.get_default_hand_landmarks_style(),
-                                mp_drawing_styles.get_default_hand_connections_style())
-                        
-
-                        for res in results2.multi_hand_landmarks:
-                            joint = np.zeros((21, 3))
-                            for j, lm in enumerate(res.landmark):
-                                joint[j] = [lm.x, lm.y, lm.z]
-
-                            # Compute angles between joints
-                            v1 = joint[[0,1,2,3,0,5,6,7,0,9,10,11,0,13,14,15,0,17,18,19],:] # Parent joint
-                            v2 = joint[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],:] # Child joint
-                            v = v2 - v1 # [20,3]
-                            # Normalize v
-                            v = v / np.linalg.norm(v, axis=1)[:, np.newaxis]
-
-                            # Get angle using arcos of dot product
-                            angle = np.arccos(np.einsum('nt,nt->n',
-                                v[[0,1,2,4,5,6,8,9,10,12,13,14,16,17,18],:], 
-                                v[[1,2,3,5,6,7,9,10,11,13,14,15,17,18,19],:])) # [15,]
-
-                            angle = np.degrees(angle) # Convert radian to degree
-
-                            # Inference gesture
-                            data = np.array([angle], dtype=np.float32)
-                            
-                            ret, results, neighbours, dist = knn.findNearest(data, 3)
-                            idx = int(results[0][0])
-                        
-                            if idx in gesture.keys():
-                                #print(rps_gesture[idx])
-                                rps_result.append(gesture[idx])
-
-                        print(rps_result)
-                        
-                        
-                        
-                        
-                        
-                        
-                        # 좌표 정보 처리
-                        landmarks2 = results2.multi_hand_landmarks
-                        
-                        
-                        
-                        
-                        if len(landmarks2) > 0:
-                            pass
-                            #print(landmarks2[0].landmark[0].x)
-                            
-                            
-                        # 사전 만들기 - input = 포즈 : landmarks 손 : landmarks2 제스처 : rps_result
-                        
-                        #result = sign_dic.check(landmarks, landmarks2, rps_result)
-                        
-                        #checklist[int(result)] += 1
-                        
-                        
-                        
-                    # 웹캠 이미지 전송
-                    ret, jpeg = cv2.imencode('.jpg', image)
-                    frame = jpeg.tobytes()
-                    yield (b'--frame\r\n'
-                        b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-                
+         
                 
 # image input    
 def image():
@@ -190,7 +70,7 @@ def image():
     
     IMAGE_FILES = ['canvas.png']
     
-    
+    # 이미지에서 골격 체크
     with mp_pose.Pose(
         static_image_mode=True,
         model_complexity=0,
@@ -202,7 +82,7 @@ def image():
         max_num_hands=2,
         min_detection_confidence=0.5) as hands:
         
-        
+
             for idx, file in enumerate(IMAGE_FILES):
                 image = cv2.imread(file)
                 
@@ -212,18 +92,19 @@ def image():
                 results = pose.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
                 results2 = hands.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
                 
+                # 사람이 없으면? 함수 종료
                 if not results.pose_landmarks:
-                    continue
+                    return 
                 
+                # 포즈 랜드마크 저장
                 landmarks = results.pose_landmarks.landmark
-                #print(landmarks[12].x ,landmarks[11].x)
+                
                     
-                
-                
-                
+                # 손이 이미지에 있으면
                 if results2.multi_hand_landmarks:
+                    # 제스처 담는 변수
                     rps_result = []
-                    
+                    #################################################### 제스처 인식 줄
                     for res in results2.multi_hand_landmarks:
                         
                             joint = np.zeros((21, 3))
@@ -250,24 +131,26 @@ def image():
                             idx = int(results[0][0])
                         
                             if idx in gesture.keys():
-                                #print(rps_gesture[idx])
                                 rps_result.append(gesture[idx])
                         
                     print(rps_result)
+                    ##################################################### 여기까지 제스처 인식
                     
-                    
-                    
+                    # 손 랜드마크 저장
                     landmarks2 = results2.multi_hand_landmarks
                     
             
-    
+                    # 현재 동작이 수어 동작인지 체크 함수
                     result = sign_dic.check(landmarks, landmarks2, rps_result)
+                    
+                    
                     if result != None:
                         checklist[result] += 1
                     else:
                         none_count += 1
                     print(checklist)
                     
+                    ########################### 단어 모음 //  이후 웹으로 정보 넘길 땐 return array[i] 하면 됨
                     # 예
                     if checklist[0] > 0:
                         print(array[0])
