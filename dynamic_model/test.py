@@ -3,16 +3,18 @@ import mediapipe as mp
 import numpy as np
 from tensorflow.keras.models import load_model
 
-actions = ['come', 'away', 'spin']
+actions = ['안녕하세요','여러분','발표','시작']
+#actions = ['hello','everyone','presentation','start']
 seq_length = 30
 
-model = load_model('models/model2_1.0.h5')
+model = load_model('dynamic_model/models/model.h5')
+print("a")
 
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
 hands = mp_hands.Hands(
-    max_num_hands=1,
+    max_num_hands=2,
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5)
 
