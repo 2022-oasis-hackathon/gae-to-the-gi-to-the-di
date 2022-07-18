@@ -118,8 +118,8 @@ def check(landmarks, landmarks2, rps_result):
     if len(landmarks2) == 1:
         if rps_result[0] == 'one':
             if landmarks2[0].landmark[8].y < landmarks2[0].landmark[5].y:
-                if landmarks2[0].landmark[8].z < landmarks[10].z:
-                    return 10
+                
+                return 10
         
     # 어디
     if len(landmarks2) == 1:
@@ -151,8 +151,8 @@ def check(landmarks, landmarks2, rps_result):
                 if abs(landmarks2[0].landmark[8].y - landmarks[7].y) < 0.2:
                     if landmarks2[0].landmark[8].y < landmarks2[0].landmark[4].y:
                         if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[9].x) < 0.15:
-                            
-                            return 14
+                            if abs(landmarks2[0].landmark[8].y - landmarks2[0].landmark[7].y) < 0.01:
+                                return 14
     
     # 놀다
     if len(landmarks2) > 1:
