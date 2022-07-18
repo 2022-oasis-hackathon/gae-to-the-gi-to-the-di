@@ -1,4 +1,6 @@
 
+
+
 // 태그 변수에 할당
 let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');

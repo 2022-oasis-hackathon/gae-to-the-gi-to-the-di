@@ -83,15 +83,26 @@
                 <rect id="n_20" rx="12" ry="12" x="0" y="0" width="674" height="404">
                 </rect>
             </svg>
-            <svg class="n_21">
+
+
+            <!-- 웹캠 들어갈 자리 -->
+            <!-- <svg class="n_21">
                 <rect id="n_21" rx="12" ry="12" x="0" y="0" width="674" height="404">
+                    
                 </rect>
-            </svg>
+            </svg> -->
+            <div class="n_21">
+                <canvas id="canvas" rx="12" ry="12" x="0" y="0" width="674" height="404"></canvas>
+                <video id="video" width="674" height="404" style="display:none"></video>
+            </div>
+            
+
+
             <div id="n__">
                 <span>학습 영상</span>
             </div>
             <div id="n__ba">
-                <span>웹캠 영상</span>
+                <span>웹캠 켜기</span>
             </div>
             <svg class="n_27">
                 <rect id="n_27" rx="12" ry="12" x="0" y="0" width="674" height="271">
@@ -210,5 +221,8 @@
                 <span>아이콘</span>
             </div>
         </div>
-        </body>
+
+
+        <script src="{{ url_for('static', filename='js/video.js') }}"></script>
+    </body>
 </html>
