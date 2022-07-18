@@ -1,0 +1,492 @@
+.mediaViewInfo {
+    --web-view-name: 1;
+    --web-view-id: n_;
+    --web-enable-deep-linking: true;
+}
+:root {
+    --web-view-ids: n_;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+#n_ {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+    --web-view-name: 1;
+    --web-view-id: n_;
+    --web-enable-deep-linking: true;
+}
+#n_1 {
+    fill: rgba(248,65,65,0.749);
+}
+.n_1 {
+    position: absolute;
+    overflow: visible;
+    width: 50px;
+    height: 48px;
+    left: 80px;
+    top: 52px;
+}
+#Text {
+    left: 142px;
+    top: 53px;
+    position: absolute;
+    overflow: visible;
+    width: 114px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Joongnajoche OTF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    color: rgba(0,0,0,1);
+}
+#n___ {
+    left: 142px;
+    top: 81px;
+    position: absolute;
+    overflow: visible;
+    width: 134px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: S-Core Dream 4;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 12px;
+    color: rgba(117,111,111,1);
+}
+#n_1_o {
+    fill: transparent;
+    stroke: rgba(112,112,112,0.729);
+    stroke-width: 0.800000011920929px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.n_1_o {
+    overflow: visible;
+    position: absolute;
+    width: 0.8px;
+    height: 37.5px;
+    left: 346px;
+    top: 56.75px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Text_p {
+    left: 719px;
+    top: 57px;
+    position: absolute;
+    overflow: visible;
+    width: 86px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH B;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#LOGO {
+    left: 91px;
+    top: 70px;
+    position: absolute;
+    overflow: visible;
+    width: 30px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH B;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    color: rgba(0,0,0,1);
+}
+#Text_r {
+    left: 416px;
+    top: 57px;
+    position: absolute;
+    overflow: visible;
+    width: 89px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#Text_s {
+    left: 568px;
+    top: 57px;
+    position: absolute;
+    overflow: visible;
+    width: 88px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH B;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#Text_t {
+    left: 868px;
+    top: 57px;
+    position: absolute;
+    overflow: visible;
+    width: 67px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH B;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#Text_u {
+    left: 998px;
+    top: 57px;
+    position: absolute;
+    overflow: visible;
+    width: 84px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH B;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#Text_v {
+    left: 1145px;
+    top: 57px;
+    position: absolute;
+    overflow: visible;
+    width: 89px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH B;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#Text_w {
+    left: 1740px;
+    top: 62px;
+    position: absolute;
+    overflow: visible;
+    width: 65px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: LH;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    text-transform: uppercase;
+}
+#n_2 {
+    fill: rgba(248,65,65,0.749);
+}
+.n_2 {
+    position: absolute;
+    overflow: visible;
+    width: 87px;
+    height: 3px;
+    left: 416px;
+    top: 85px;
+}
+#n_2_y {
+    position: absolute;
+    width: 1920px;
+    height: 1021.001px;
+    left: 0px;
+    top: 150px;
+    overflow: visible;
+}
+#n_5 {
+    fill: rgba(0,0,0,0.549);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.n_5 {
+    position: absolute;
+    overflow: visible;
+    width: 1920px;
+    height: 972px;
+    left: 0px;
+    top: 150px;
+}
+#n____ {
+    left: 130px;
+    top: 363px;
+    position: absolute;
+    overflow: visible;
+    width: 251px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Source Han Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.2px;
+}
+#n_____ {
+    left: 130px;
+    top: 403px;
+    position: absolute;
+    overflow: visible;
+    width: 531px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Source Han Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.6px;
+}
+#n_8 {
+    fill: rgba(248,65,65,1);
+}
+.n_8 {
+    position: absolute;
+    overflow: visible;
+    width: 193px;
+    height: 51px;
+    left: 130px;
+    top: 782px;
+}
+#n__ {
+    left: 167px;
+    top: 793px;
+    position: absolute;
+    overflow: visible;
+    width: 121px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Source Han Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.4px;
+}
+#n_5_ {
+    fill: rgba(248,65,65,1);
+}
+.n_5_ {
+    position: absolute;
+    overflow: visible;
+    width: 85px;
+    height: 85px;
+    left: 1755px;
+    top: 938px;
+}
+#n_6 {
+    fill: rgba(0,0,0,1);
+}
+.n_6 {
+    position: absolute;
+    overflow: visible;
+    width: 85px;
+    height: 85px;
+    left: 1755px;
+    top: 853px;
+}
+#CONTACT_US {
+    left: 1763px;
+    top: 973px;
+    position: absolute;
+    overflow: visible;
+    width: 71px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Source Han Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.4px;
+}
+#Text_ {
+    left: 1777px;
+    top: 888px;
+    position: absolute;
+    overflow: visible;
+    width: 43px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Source Han Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.4px;
+}
+#n_____________________________ {
+    left: 130px;
+    top: 585px;
+    position: absolute;
+    overflow: visible;
+    width: 514px;
+    white-space: nowrap;
+    line-height: 26px;
+    margin-top: -6px;
+    text-align: left;
+    font-family: 조선가는고딕;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.4px;
+}
+#n_7 {
+    fill: rgba(248,65,65,1);
+}
+.n_7 {
+    position: absolute;
+    overflow: visible;
+    width: 9px;
+    height: 9px;
+    left: 376px;
+    top: 486px;
+}
+#n_402422_link_share_web_send_c {
+    fill: transparent;
+}
+.n_402422_link_share_web_send_c {
+    mix-blend-mode: darken;
+    position: absolute;
+    overflow: visible;
+    width: 36px;
+    height: 36px;
+    left: 130px;
+    top: 672px;
+}
+#Rectangle {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 130px;
+    top: 683px;
+    overflow: visible;
+}
+#n_026704_heart_thin_icon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 168px;
+    top: 681px;
+    overflow: visible;
+}
+#n_265 {
+    left: 197px;
+    top: 684px;
+    position: absolute;
+    overflow: visible;
+    width: 43px;
+    white-space: nowrap;
+    line-height: 26px;
+    margin-top: -4px;
+    text-align: left;
+    font-family: 조선가는고딕;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(242,242,242,1);
+    letter-spacing: 0.4px;
+}
+#n_8_be {
+    fill: rgba(248,65,65,1);
+}
+.n_8_be {
+    position: absolute;
+    overflow: visible;
+    width: 10px;
+    height: 10px;
+    left: 1227px;
+    top: 53px;
+}
+#n_15 {
+    fill: rgba(242,242,242,1);
+}
+.n_15 {
+    position: absolute;
+    overflow: visible;
+    width: 355px;
+    height: 42px;
+    left: 1353px;
+    top: 54px;
+}
+#Youtube {
+    left: 130px;
+    top: 1000px;
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Cambria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.5px;
+}
+#Facebook {
+    left: 209px;
+    top: 1000px;
+    position: absolute;
+    overflow: visible;
+    width: 63px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Cambria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.5px;
+}
+#Twitter {
+    left: 297px;
+    top: 1000px;
+    position: absolute;
+    overflow: visible;
+    width: 50px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Cambria;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.5px;
+}
+#n_801315_glass_magnifier_magni {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 1668px;
+    top: 64px;
+    overflow: visible;
+}
