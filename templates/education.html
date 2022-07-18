@@ -79,11 +79,16 @@
             </svg>
             <img id="n_801315_glass_magnifier_magni" src="{{ url_for('static', filename='images/n_801315_glass_magnifier_magni.png') }}">
                 
-            <svg class="n_20">
+            <!-- <svg class="n_20">
                 <rect id="n_20" rx="12" ry="12" x="0" y="0" width="674" height="404">
                 </rect>
-            </svg>
+            </svg> -->
+            <div class="n_20">
+                <video id="n_20" rx="12" ry="12" x="0" y="0" width="674" height="404" autoplay muted loop>
+                    <source id="source" src="" type="video/webm">
 
+                </video>
+            </div>
 
             <!-- 웹캠 들어갈 자리 -->
             <!-- <svg class="n_21">
@@ -99,7 +104,7 @@
 
 
             <div id="n__">
-                <span>학습 영상</span>
+                <span id="start">학습 시작</span>
             </div>
             <div id="n__ba">
                 <span id="on_off">웹캠 켜기</span>
@@ -115,7 +120,8 @@
             <img id="n_801315_glass_magnifier_magni_ba" src="{{ url_for('static', filename='images/n_801315_glass_magnifier_magni_ba.png') }}">
                 
             <div id="n____bb">
-                <span>일상생활 수어 : </span><span style="font-family:Source Han Sans K;font-style:normal;font-weight:bold;">커피</span>
+                <span>수어 : </span>
+                <span id="sign_text" style="font-family:Source Han Sans K;font-style:normal;font-weight:bold;"></span>
             </div>
             <div id="n__bc">
                 <span>수형 설명</span>
@@ -123,9 +129,9 @@
             <div id="n__bd">
                 <span>나의 학습률</span>
             </div>
-            <div id="Text_be">
+            <!-- <div id="Text_be">
                 <span>결합정보</span>
-            </div>
+            </div> -->
             <svg class="n_9">
                 <ellipse id="n_9" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
                 </ellipse>
@@ -135,25 +141,35 @@
                 </ellipse>
             </svg>
             <svg class="n_10">
-                <ellipse id="n_10" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
-                </ellipse>
+                <!-- <ellipse id="n_10" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
+                </ellipse> -->
             </svg>
-            <div id="n__1__________________________">
-                <span>오른쪽 주먹 1자를 펴서 끝 바닥을 코에 댄 다음, <br/>그 끝을  둥굴게 구부려 모로 세운 왼손 안에 넣어 올린다.              </span>
+            <div id="n__1__________________________" >
+                <span id="detail"></span>
             </div>
-            <div id="n____Coffee_Co_____">
+            <!-- <div id="n____Coffee_Co_____">
                 <span>[코(숨을 쉬는 기관 '코'를 Coffee의 'Co'로 빌려서 씀 + 차] </span>
-            </div>
-            <img id="Rectangle" src="{{ url_for('static', filename='images/Rectangle.png') }}">
+            </div> -->
+            <!-- <img id="Rectangle" src="{{ url_for('static', filename='images/Rectangle.png') }}"> -->
                 
-            <svg class="n_29">
+            <!-- 프로그래스바 삽입 -->
+            <!-- <svg class="n_29">
                 <rect id="n_29" rx="12" ry="12" x="0" y="0" width="605" height="50">
                 </rect>
-            </svg>
-            <svg class="n_30">
+            </svg> -->
+            <div class="n_29">
+                <span class="progressbar">
+                    <span id="progress"></span>
+                </span>
+            </div>
+            
+
+            <!-- <svg class="n_30">
                 <rect id="n_30" rx="12" ry="12" x="0" y="0" width="457" height="34">
                 </rect>
-            </svg>
+            </svg> -->
+
+
             <div id="n_2_">
                 <span>72% </span>
             </div>
@@ -161,14 +177,14 @@
                 <span>잘 따라오고 있어요!</span>
             </div>
             <div id="n____bp">
-                <span>현재 나의 정확도 </span>
+                <span>현재 나의 정확도</span>
             </div>
             <svg class="n_12">
                 <ellipse id="n_12" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
                 </ellipse>
             </svg>
             <div id="n_____">
-                <span>손이 조금 더 올라가야 해요! </span>
+                <span>정확한 동작을 표현해야 해요! </span>
             </div>
             <img id="n_1_bs" src="{{ url_for('static', filename='images/n_1_bs.png') }}" >
                 
@@ -224,5 +240,6 @@
 
 
         <script src="{{ url_for('static', filename='js/video.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/education.js') }}"></script>
     </body>
 </html>
