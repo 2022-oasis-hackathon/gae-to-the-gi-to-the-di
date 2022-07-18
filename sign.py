@@ -18,10 +18,9 @@ mp_hands = mp.solutions.hands
 
 # 제스처 번호
 gesture = {
-    0:'fist', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five',
-    6:'six', 7:'rock', 8:'spiderman', 9:'yeah', 10:'ok',
+    0:'너는', 1:'이름', 2:'뭐야?', 3:'어디', 4:'살다', 5:'좋다',
 }
-rps_gesture = {0:'rock', 5:'paper', 9:'scissors'}
+#rps_gesture = {0:'rock', 5:'paper', 9:'scissors', }
 
 
 # 제스처 모델 import
@@ -73,7 +72,7 @@ def image():
     # 이미지에서 골격 체크
     with mp_pose.Pose(
         static_image_mode=True,
-        model_complexity=0,
+        model_complexity=2,
         enable_segmentation=True,
         min_detection_confidence=0.5) as pose:
         

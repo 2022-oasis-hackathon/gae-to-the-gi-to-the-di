@@ -3,7 +3,7 @@
 let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-
+console.log("되나?")
 // 웹캠 시작
 navigator.mediaDevices.getUserMedia({ video: true })
 .then( (stream) => {
@@ -51,3 +51,4 @@ navigator.mediaDevices.getUserMedia({ video: true })
     requestAnimationFrame(loop); //그리기 반복
 
 })();
+console.log("되나?2")

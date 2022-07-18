@@ -8,10 +8,7 @@ from io import BytesIO
 # 파일 import
 import sign
 
-
-
 app = Flask(__name__)
-
 
 
 @app.route('/') # 홈페이지
