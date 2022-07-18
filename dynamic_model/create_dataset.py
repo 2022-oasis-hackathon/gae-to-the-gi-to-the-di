@@ -3,7 +3,7 @@ import mediapipe as mp
 import numpy as np
 import time, os
 
-actions = ['여러분', '안녕하세요' ,'발표', '시작']
+actions = ['여러분', '안녕하세요' ,'발표', '시작', '어때_의문문', '오늘', '하루', '보내다']
 seq_length = 30
 secs_for_action = 30
 
