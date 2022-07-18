@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Joongnajoche OTF;
+    src: url('../font/Joongnajoche.otf') format('truetype');
+}
+@font-face {
+    font-family: S-Core Dream 4;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: LH B;
+    src: url('../font/LH B.ttf') format('truetype');
+}
+@font-face {
+    font-family: LH;
+    src: url('../font/LH M.ttf') format('truetype');
+}
+@font-face {
+    font-family: Source Han Sans KR;
+    src: url('../font/kr.otf') format('truetype');
+}
+@font-face {
+    font-family: 조선가는고딕;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Cambria;
+    src: url('../font/Cambria.ttf') format('truetype');
+}
+
+a {
+    text-decoration: none;
+  }
