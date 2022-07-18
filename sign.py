@@ -89,7 +89,7 @@ def image():
             for idx, file in enumerate(IMAGE_FILES):
                 image = cv2.imread(file)
                 
-                    
+                
                 
                 # Convert the BGR image to RGB before processing.
                 results = pose.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
