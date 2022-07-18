@@ -9,8 +9,6 @@ import cv2
 # 파일 import
 import sign
 
-
-
 app = Flask(__name__)
 
 ################################################## test 시 주석 해제 -> 테스트용 링크 클릭
@@ -19,7 +17,6 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
 video = cv2.VideoCapture(0)
-#################################################
 
 @app.route('/') # 홈페이지
 def index():

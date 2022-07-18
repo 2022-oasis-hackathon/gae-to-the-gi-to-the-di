@@ -143,7 +143,7 @@ def gen(video):
                 
 # image input    
 def image():
-    
+
     IMAGE_FILES = ['canvas.png']
     
     
