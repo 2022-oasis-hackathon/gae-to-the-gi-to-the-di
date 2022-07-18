@@ -68,7 +68,53 @@ canvas.addEventListener('click', ()=>{
         .catch( (error)=>{
             console.log(error);
         });
+
+    //웹캠이 켜져있을 때
+    } else { 
+
+        video.srcObject.getTracks().forEach(function(track) {
+            track.stop();
+        });
         
+        video.pause(); 
+        clearInterval(interval);
+
+        ctx.strokeStyle = "red"; // border(선)색
+        ctx.lineWidth = "20";
+        ctx.fillStyle = "#c1c1c1"; // 면색상
+        
+        //드로잉    
+        window.cancelAnimationFrame(requestId);    
+        requestId = undefined;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        edu_video_btn.style.display = 'block';
+
+    } 
+    
+})
+
+// 텍스트 눌러도 켜지게 함수 추가
+edu_video_btn.addEventListener('click', ()=>{
+
+    //웹캠이 꺼져있을 때
+    if (video.paused) {
+        // 웹캠 시작
+        navigator.mediaDevices.getUserMedia({ video: true })
+        .then( (stream) => {
+            video.srcObject  = stream  //비디오 테그에 웹캠 스트림을 넣습니다.
+            video.play()  //비디오 테그 실행
+
+            //그리기 반복
+            requestId = window.requestAnimationFrame(loop); 
+            interval = setInterval((data_ajax),500)
+            
+            edu_video_btn.style.display = 'none';
+
+        })
+        .catch( (error)=>{
+            console.log(error);
+        });
+
     //웹캠이 켜져있을 때
     } else { 
 
