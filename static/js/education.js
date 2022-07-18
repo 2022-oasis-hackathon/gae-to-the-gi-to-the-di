@@ -4,7 +4,7 @@ var source = document.getElementById('source');
 var edu_video = document.getElementById('n_20');
 
 const array = {
-    '너' : 'http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20191014/627265/MOV000251996_700X466.webm',
+    '너는' : 'http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20191014/627265/MOV000251996_700X466.webm',
     '이름' : 'http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20191015/627715/MOV000256668_700X466.webm',
     '무엇' : 'http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20191028/632014/MOV000257351_700X466.webm',
     '어디' : 'http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200820/732429/MOV000243844_700X466.webm',
@@ -50,15 +50,18 @@ function shuffle(array) {
 
 
 var keys = Object.keys(array)
+
 shuffle(keys)
-var i = 0;
+
+var number = 0;
+
 function now_text(){
-    source.src = array[keys[i]]
+    source.src = array[keys[number]]
     edu_video.load();
     edu_video.play();
     
-    document.getElementById('sign_text').innerHTML=keys[i];
-    document.getElementById('n__1__________________________').innerHTML=array2[keys[i]];
+    document.getElementById('sign_text').innerHTML=keys[number];
+    document.getElementById('n__1__________________________').innerHTML=array2[keys[number]];
 }
 
 
@@ -77,7 +80,6 @@ start.addEventListener('click', ()=>{
     now_text();
 
     
-
 
     
 

@@ -15,6 +15,7 @@ var interval = "";
 var requestId = undefined;
 
 
+
 // canvas 좌우 반전을 위해 video -> canvas로 그리기
 function loop(){
     
@@ -40,8 +41,27 @@ function data_ajax(){
         data:{
         imageBase64: dataURL
         }
-    }).done(function() {
-        
+    }).done(function(text) {
+        console.log(text);
+        console.log(text, keys[number])
+        // 맞으면 다음으로 진행
+        // 끝까지 다하면 종료
+        if (text == keys[number]){
+            
+            number = number + 1;
+            if (number == keys.length){
+                start.style.display = 'block';
+                source.src = "";
+                edu_video.load();
+                
+                document.getElementById('sign_text').innerHTML="";
+                document.getElementById('n__1__________________________').innerHTML="";
+            }
+            else{
+                now_text();
+            }
+            
+        }
     });
 }
 

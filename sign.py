@@ -44,13 +44,13 @@ array = {
     3 : '괜찮아',
     4 : '감사합니다',
     5 : '미안합니다',
-    6 : '좋아',
-    7 : '너',
+    6 : '좋다',
+    7 : '너는',
     8 : '이름',
     9 : '무엇',
     10 : '어디',
     11 : '살다',
-    12 : '먹다',
+    12 : '음식,먹다',
     13 : '어제',
     14 : '놀다',
     15 : '나',
@@ -158,90 +158,104 @@ def image():
                     if checklist[0] > 0:
                         print(array[0])
                         checklist = [0 for i in range(len(checklist))]
-                        
+                        return array[0]
                     # 아니오
                     elif checklist[1] > 0:
                         if checklist[2] > 0:
                             print(array[1])
                             checklist = [0 for i in range(len(checklist))]
+                            return array[1]
                         # 살다
                         elif checklist[12] > 0:
                             print(array[11])
                             checklist = [0 for i in range(len(checklist))]
-                    
+                            return array[11]
                     # 싫어
                     elif checklist[3] > 0:
                         print(array[2])
                         checklist = [0 for i in range(len(checklist))]
-
+                        return array[2]
                     # 괜찮아
                     elif checklist[4] > 0:
                         print(array[3])
                         checklist = [0 for i in range(len(checklist))]
-                    
+                        return array[3]
                     #미안 감사
                     elif checklist[5] > 0:
                         if checklist[6] > 0:
                             print(array[5]) # 미안합니다
                             checklist = [0 for i in range(len(checklist))]
+                            return array[5]
                         else:
                             print(array[4]) # 감사합니다
                             checklist = [0 for i in range(len(checklist))]
+                            return array[4]
                     
                     # 좋다
                     elif checklist[7] > 0:
                         print(array[6])
                         checklist = [0 for i in range(len(checklist))]
+                        return array[6]
                     
                     # 너
                     elif checklist[8] > 0:
                         print(array[7])
                         checklist = [0 for i in range(len(checklist))]
+                        return array[7]
                         
                     # 이름
                     elif checklist[9] > 0:
                         print(array[8])
                         checklist = [0 for i in range(len(checklist))]
+                        return array[8]
                         
                     # 무엇
                     elif checklist[10] > 0:
                         print(array[9])
                         checklist = [0 for i in range(len(checklist))]
+                        return array[9]
                     
                     # 어디
                     elif checklist[11] > 0:
                         print(array[10])
                         checklist = [0 for i in range(len(checklist))]
+                        return array[10]
                     
                     # 먹다
                     elif checklist[13] > 0:
                         print(array[12])
                         checklist = [0 for i in range(len(checklist))]
+                        return array[12]
                         
                     # 어제
                     elif checklist[14] > 0:
                         print(array[13])
                         checklist = [0 for i in range(len(checklist))]    
+                        return array[13]
                         
                     # 놀다
                     elif checklist[15] > 0:
                         print(array[14])
                         checklist = [0 for i in range(len(checklist))]  
+                        return array[14]
                     
                     # 나
                     elif checklist[16] > 0:
                         print(array[15])
-                        checklist = [0 for i in range(len(checklist))]      
+                        checklist = [0 for i in range(len(checklist))]  
+                        return array[15]    
                         
                     # 같이
                     elif checklist[17] > 0:
                         print(array[16])
-                        checklist = [0 for i in range(len(checklist))]    
+                        checklist = [0 for i in range(len(checklist))]
+                        return array[16]    
                         
                     # 가자
                     elif checklist[18] > 0:
                         print(array[17])
-                        checklist = [0 for i in range(len(checklist))]     
+                        checklist = [0 for i in range(len(checklist))]  
+                        return array[17]   
                         
                     # 아무 행동도 없을 시 초기화
                     elif none_count > 5:

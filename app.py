@@ -34,10 +34,11 @@ def canvas_image():
         im.save('canvas.png')
         
         # 체크
-        sign.image() # 골격 정보 체크 함수
+        text = sign.image() # 골격 정보 체크 함수
+        if text == None:
+            text = ""
         
-        
-    return ('', 204) # 아무것도 리턴하지 않음
+    return text
 
 
 
