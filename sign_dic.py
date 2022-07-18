@@ -6,17 +6,22 @@
 array = {
     0 : '네',
     1 : '아니오1',
-    2 : '아니오2',
-    3 : '싫어',
-    4 : '괜찮아',
-    5 : '감사합니다',
-    6 : '미안합니다',
-    7 : '좋다',
-    8 : '너',
-    9 : '이름',
-    10 : '무엇',
-    11 : '어디',
-    12 : '살다'
+    2 : '싫어',
+    3 : '괜찮아',
+    4 : '감사합니다',
+    5 : '미안합니다',
+    6 : '좋다',
+    7 : '너',
+    8 : '이름',
+    9 : '무엇',
+    10 : '어디',
+    11 : '살다',
+    12 : '먹다',
+    13 : '어제',
+    14 : '놀다',
+    15 : '나',
+    16 : '같이',
+    17 : '가자'
     
 }
 
@@ -39,7 +44,9 @@ def check(landmarks, landmarks2, rps_result):
             if abs(landmarks2[0].landmark[12].y - landmarks2[0].landmark[16].y) < 0.05 and abs(landmarks2[0].landmark[16].y - landmarks2[0].landmark[20].y) < 0.05:
                 if landmarks2[0].landmark[8].x < landmarks2[0].landmark[4].x and landmarks2[1].landmark[4].x < landmarks2[1].landmark[8].x:
                     if landmarks2[0].landmark[8].y > landmarks[0].y and landmarks2[1].landmark[8].y > landmarks[0].y:
-                        return 1
+                        
+                        if abs(landmarks2[0].landmark[8].x - landmarks2[1].landmark[8].x) > 0.1:
+                            return 1
     # 아니오2
     if len(landmarks2) > 1:
         if landmarks2[0].landmark[4].x < landmarks2[0].landmark[8].x and landmarks2[1].landmark[8].x < landmarks2[1].landmark[4].x: # 양손 엄지 검지 위치
@@ -72,7 +79,8 @@ def check(landmarks, landmarks2, rps_result):
             if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[12].x) < 0.05 and abs(landmarks2[0].landmark[16].x - landmarks2[0].landmark[12].x) < 0.05: # 윗손 수직
                 
                 if landmarks2[0].landmark[4].y < landmarks2[0].landmark[8].y:
-                    if abs(landmarks2[1].landmark[5].x - landmarks2[0].landmark[20].x) < 0.1:
+                    if abs(landmarks2[1].landmark[5].x - landmarks2[0].landmark[20].x) < 0.05:
+                    
                         return 5
     
     # 미안합니다
@@ -92,10 +100,11 @@ def check(landmarks, landmarks2, rps_result):
             
     # 너
     if len(landmarks2) == 1:
-        if landmarks2[0].landmark[3].x < landmarks2[0].landmark[8].x:
-            if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[7].x) < 0.02 and abs(landmarks2[0].landmark[6].x - landmarks2[0].landmark[5].x) < 0.02:
-                if abs(landmarks2[0].landmark[8].y - landmarks2[0].landmark[7].y) < 0.02 and abs(landmarks2[0].landmark[6].y - landmarks2[0].landmark[5].y) < 0.02:
-                    return 8
+        if rps_result[0] != 'five':
+            if landmarks2[0].landmark[3].x < landmarks2[0].landmark[8].x:
+                if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[7].x) < 0.02 and abs(landmarks2[0].landmark[6].x - landmarks2[0].landmark[5].x) < 0.02:
+                    if abs(landmarks2[0].landmark[8].y - landmarks2[0].landmark[7].y) < 0.02 and abs(landmarks2[0].landmark[6].y - landmarks2[0].landmark[5].y) < 0.02:
+                        return 8
     
     # 이름
     if len(landmarks2) == 1:
@@ -109,7 +118,8 @@ def check(landmarks, landmarks2, rps_result):
     if len(landmarks2) == 1:
         if rps_result[0] == 'one':
             if landmarks2[0].landmark[8].y < landmarks2[0].landmark[5].y:
-                return 10
+                if landmarks2[0].landmark[8].z < landmarks[10].z:
+                    return 10
         
     # 어디
     if len(landmarks2) == 1:
@@ -125,24 +135,53 @@ def check(landmarks, landmarks2, rps_result):
                     if landmarks2[0].landmark[8].y < landmarks[0].y and landmarks2[1].landmark[8].y < landmarks[0].y:
                         return 12
     
-    # 좋아하는
+    # 먹다
+    if len(landmarks2) == 1:
+        if rps_result[0] == 'five':
+            if landmarks[10].x < landmarks2[0].landmark[12].x and landmarks2[0].landmark[12].x < landmarks[9].x:
+                if abs(landmarks[10].y - landmarks2[0].landmark[12].y) < 0.02:
+                    if landmarks2[0].landmark[12].x < landmarks2[0].landmark[8].x:
+                        return 13
     
-    # 음식
     
     # 어제
+    if len(landmarks2) == 1:
+        if rps_result[0] != 'five':
+            if landmarks2[0].landmark[8].x >landmarks[7].x:
+                if abs(landmarks2[0].landmark[8].y - landmarks[7].y) < 0.2:
+                    if landmarks2[0].landmark[8].y < landmarks2[0].landmark[4].y:
+                        if abs(landmarks2[0].landmark[8].x - landmarks2[0].landmark[9].x) < 0.15:
+                            
+                            return 14
     
-    # 뭐하고
+    # 놀다
+    if len(landmarks2) > 1:
+        if abs(landmarks[13].y - landmarks[14].y) < 0.07:
+            if abs(landmarks2[0].landmark[12].x - landmarks2[1].landmark[0].x) < 0.03 and abs(landmarks2[1].landmark[12].x - landmarks2[0].landmark[0].x) < 0.03:
+                return 15
     
-    # 놀았어
+    
     
     # 나
-    
-    # 밥
-    
-    # 먹으러
-    
-    # 가자
+    if len(landmarks2) == 1:
+        if landmarks2[0].landmark[4].y < landmarks2[0].landmark[8].y:
+            if landmarks2[0].landmark[8].x < landmarks[10].x and landmarks2[0].landmark[12].x < landmarks[10].x and landmarks2[0].landmark[16].x < landmarks[10].x:
+                if landmarks[9].x < landmarks2[0].landmark[4].x:
+                    return 16
     
     # 같이
+    
+    if len(landmarks2) == 2:
+        
+        if abs(landmarks2[0].landmark[8].x - landmarks2[1].landmark[8].x) < 0.02 and abs(landmarks2[0].landmark[8].y - landmarks2[1].landmark[8].y) < 0.02:
+            if landmarks2[0].landmark[8].y < landmarks2[0].landmark[4].y and landmarks2[1].landmark[8].y < landmarks2[1].landmark[4].y:
+                return 17
+    
+    # 가자
+    if len(landmarks2) == 1:
+        if landmarks2[0].landmark[4].x < landmarks2[0].landmark[8].x:
+            if rps_result[0] == 'five':
+                if landmarks2[0].landmark[8].x < landmarks2[0].landmark[4].y:
+                    return 18
     
     
