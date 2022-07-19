@@ -85,5 +85,14 @@ def text_input():
         
         return sign2.action_test_print()
 
+@app.route('/login') # 번역 페이지
+def login():
+    return render_template('login.html')
+
+@app.route('/login_on') # 번역 페이지
+def login_on():
+    return render_template('login_on.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True) # 
