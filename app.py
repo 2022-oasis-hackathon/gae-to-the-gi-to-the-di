@@ -3,10 +3,12 @@ import base64
 from PIL import Image
 import re
 from io import BytesIO
-
+import cv2
 
 # 파일 import
 import sign, sign2
+
+cap = cv2.VideoCapture(0)
 
 app = Flask(__name__)
 
@@ -65,6 +67,16 @@ def canvas_image2():
 @app.route('/test') # 시험 페이지 
 def test():
     return render_template('test.html')
+
+
+
+@app.route('/video_feed')
+def video_feed():
+    global cap
+    return Response(sign2.gen(cap),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
 
 
 if __name__ == '__main__':
