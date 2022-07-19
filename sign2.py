@@ -1,65 +1,49 @@
-from pickle import FALSE
+# 골격 체크 파일
 import cv2
 import mediapipe as mp
 import numpy as np
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 
-# 에러 : tensorflow.python.framework.errors_impl.InternalError: Blas GEMM launch failed 날때
+# gpu
 gpus = tf.config.experimental.list_physical_devices('GPU')
 for gpu in gpus:
   tf.config.experimental.set_memory_growth(gpu, True)
 
-#actions = ['여러분','안녕하세요','발표', ,'시작']
-actions = [
-    '안녕하세요',
-    '여러분',
-    '발표',
-    '시작',
-    '오늘',
-    '하루',
-    '어떻게',
-    '보내다'
-]
-actions = ['everyone','hello','presentation','start','how','today', 'day','spend']
-seq_length = 30
+model = load_model('dynamic_model/models/model.h5') # 모델 불러오기
 
-model = load_model('dynamic_model/models/model.h5')
-
-# MediaPipe hands model
-
-mp_hands = mp.solutions.hands
+# mediapipe 변수
 mp_drawing = mp.solutions.drawing_utils
+mp_drawing_styles = mp.solutions.drawing_styles
+mp_pose = mp.solutions.pose
+mp_hands = mp.solutions.hands
 
 hands = mp_hands.Hands(
+    static_image_mode=True,
     max_num_hands=2,
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5)
 
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
 
-# w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-# h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-# fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
-# out = cv2.VideoWriter('input.mp4', fourcc, cap.get(cv2.CAP_PROP_FPS), (w, h))
-# out2 = cv2.VideoWriter('output.mp4', fourcc, cap.get(cv2.CAP_PROP_FPS), (w, h))
+actions = [ '안녕하세요', '여러분', '발표', '시작', '오늘', '하루', '어떻게', '보내다']
+#actions = ['everyone','hello','presentation','start','how','today', 'day','spend']
 
 seq = []
+seq_length = 30
 action_seq = []
 
-# # 이미지 변수 저장
-# def input_image(video):
-#     ret, img = video.read() # cv2
-#     img = cv2.flip(img, 1)
-#     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-#     result = hands.process(img)
-#     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+def output_label():
+    #while cap.isOpened():
+        #ret,img = cap.read()
+    IMAGE_FILES = ['canvas.png']
 
-#     return img, result
-
-while cap.isOpened():
-    #img, result = input_image(cap)
-    ret, img = cap.read() # cv2
+    img = cv2.imread('canvas.png')
+    if img is None:
+        return
+    
+    #for idx, file in enumerate(IMAGE_FILES):
+    #img = cv2.imread('canvas.png')
     img = cv2.flip(img, 1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     result = hands.process(img)
@@ -113,11 +97,4 @@ while cap.isOpened():
                     flag = False
                     break
             if flag: this_action = action 
-            if this_action != '?' : print(this_action)
-
-    # out.write(img0)
-    # out2.write(img)
-
-    cv2.imshow('img', img)
-    if cv2.waitKey(1) == ord('q'):
-        break
+            if this_action != '?' : return this_action
