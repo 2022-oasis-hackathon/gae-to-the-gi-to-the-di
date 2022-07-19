@@ -22,6 +22,23 @@
     --web-view-id: n_;
     --web-enable-deep-linking: true;
 }
+#n_781824_alarm_alert_attention {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: 1794px;
+    
+    overflow: visible;
+}
+#n_666609_user_icon {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 1731px;
+    
+    overflow: visible;
+}
+
 #n__2__1 {
     position: absolute;
     width: 1920.001px;
