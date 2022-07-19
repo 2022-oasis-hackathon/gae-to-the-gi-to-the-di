@@ -648,3 +648,11 @@
     top: 554px;
     transform: matrix(1,0,0,1,0,0);
 }
+a:visited {
+    color : black;
+    text-decoration: none;
+}
+a:hover {
+    color : red;
+    text-decoration: underline;
+  }

@@ -795,3 +795,12 @@
     font-size: 8px;
     color: rgba(255,255,255,1);
 }
+
+a:visited {
+    color : black;
+    text-decoration: none;
+}
+a:hover {
+    color : red;
+    text-decoration: underline;
+  }
