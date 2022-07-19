@@ -13,7 +13,6 @@ app = Flask(__name__)
 cap = cv2.VideoCapture(0)
 
 @app.route('/') # 홈페이지
-
 def index():
     return render_template('index.html')
 

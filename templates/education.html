@@ -1,245 +1,213 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/education.css') }}">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>수어? 쉬워!</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/education.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="n_">
+			<svg class="n_1" viewBox="0 0 0.800000011920929 37.5">
+				<path id="n_1" d="M 0 0 L 0 37.5">
+				</path>
+			</svg>
+			<div id="Text">
+				<span><a href="translation">번역하기</a></span>
+			</div>
+			<div id="Text_r">
+				<span><a href="./">메인화면</a></span>
+			</div>
+			<div id="Text_s">
+				<span><a href="education">학습하기</a></span>
+			</div>
+			<div id="Text_t">
+				<span><a href="test">테스트</a></span>
+			</div>
+			<div id="Text_u">
+				<span>커뮤니티</span>
+			</div>
+			<div id="Text_v">
+				<span>공지사항</span>
+			</div>
+			<svg class="n_2">
+				<rect id="n_2" rx="0" ry="0" x="0" y="0" width="87" height="3">
+				</rect>
+			</svg>
+			<svg class="n_8">
+				<ellipse id="n_8" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="n_17">
+				<rect id="n_17" rx="0" ry="0" x="0" y="0" width="1920" height="1">
+				</rect>
+			</svg>
+			<svg class="n_19">
+				<rect id="n_19" rx="0" ry="0" x="0" y="0" width="346" height="955">
+				</rect>
+			</svg>
+			<svg class="n_15">
+				<rect id="n_15" rx="20" ry="20" x="0" y="0" width="355" height="42">
+				</rect>
+			</svg>
+			<img id="n_801315_glass_magnifier_magni" src="{{ url_for('static', filename='images/n_801315_glass_magnifier_magni.png') }}" >
+				
+			<!-- <svg class="n_20">
+				<rect id="n_20" rx="12" ry="12" x="0" y="0" width="674" height="404">
+				</rect>
+			</svg> -->
 
-
-        <title>수어 프로그램</title>
-        
-    </head>
-
-
-
-    <body>
-        <div id="n_">
-            <svg class="n_1">
-                <rect id="n_1" rx="0" ry="0" x="0" y="0" width="50" height="48">
-                </rect>
-            </svg>
-            <div id="Text">
-                <span>개투기투디</span>
-            </div>
-            <div id="n___">
-                <span>쉽게 알려주는 수어, 쉬어!</span>
-            </div>
-            <svg class="n_1_o" viewBox="0 0 0.800000011920929 37.5">
-                <path id="n_1_o" d="M 0 0 L 0 37.5">
-                </path>
-            </svg>
-            <div id="Text_p">
-                <span><a href="translation">번역하기</a></span>
-            </div>
-            <div id="LOGO">
-                <span>LOGO</span>
-            </div>
-            <div id="Text_r">
-                <span><a href="./">메인화면</a></span>
-            </div>
-            <div id="Text_s">
-                <span><a href="education">학습하기</a></span>
-            </div>
-            <div id="Text_t">
-                <span><a href="test">테스트</a></span>
-            </div>
-            <div id="Text_u">
-                <span>커뮤니티</span>
-            </div>
-            <div id="Text_v">
-                <span>공지사항</span>
-            </div>
-            <svg class="n_2">
-                <rect id="n_2" rx="0" ry="0" x="0" y="0" width="87" height="3">
-                </rect>
-            </svg>
-            <svg class="n_8">
-                <ellipse id="n_8" rx="5" ry="5" cx="5" cy="5">
-                </ellipse>
-            </svg>
-            <svg class="n_17">
-                <rect id="n_17" rx="0" ry="0" x="0" y="0" width="1920" height="1">
-                </rect>
-            </svg>
-            <svg class="n_19">
-                <rect id="n_19" rx="0" ry="0" x="0" y="0" width="346" height="955">
-                </rect>
-            </svg>
-            <img id="n_904653_alarm_alert_bell_noti" src="{{ url_for('static', filename='images/bell_clock_icon.png') }}">
-                
-            <img id="n_867954_user_icon" src="{{ url_for('static', filename='images/n_867954_user_icon.png') }}">
-                
-            <svg class="n_15">
-                <rect id="n_15" rx="20" ry="20" x="0" y="0" width="355" height="42">
-                </rect>
-            </svg>
-            <img id="n_801315_glass_magnifier_magni" src="{{ url_for('static', filename='images/n_801315_glass_magnifier_magni.png') }}">
-                
-            <!-- <svg class="n_20">
-                <rect id="n_20" rx="12" ry="12" x="0" y="0" width="674" height="404">
-                </rect>
-            </svg> -->
-            <div class="n_20">
+			<div class="n_20">
                 <video id="n_20" rx="12" ry="12" x="0" y="0" width="674" height="404" autoplay muted loop>
                     <source id="source" src="" type="video/webm">
 
                 </video>
             </div>
 
-            <!-- 웹캠 들어갈 자리 -->
-            <!-- <svg class="n_21">
-                <rect id="n_21" rx="12" ry="12" x="0" y="0" width="674" height="404">
-                    
-                </rect>
-            </svg> -->
-            <div class="n_21">
+
+			<!-- <svg class="n_21">
+				<rect id="n_21" rx="12" ry="12" x="0" y="0" width="674" height="404">
+				</rect>
+			</svg> -->
+			<div class="n_21">
                 <canvas id="canvas" rx="12" ry="12" x="0" y="0" width="674" height="404"></canvas>
                 <video id="video" width="674" height="404" style="display:none"></video>
             </div>
-            
 
+			<div id="n__">
+				<span id="start">학습 시작</span>
+			</div>
+			<div id="n__ba">
+				<span id="on_off">웹캠 켜기</span>
+			</div>
+			<svg class="n_27">
+				<rect id="n_27" rx="12" ry="12" x="0" y="0" width="674" height="271">
+				</rect>
+			</svg>
+			<svg class="n_28">
+				<rect id="n_28" rx="12" ry="12" x="0" y="0" width="674" height="271">
+				</rect>
+			</svg>
+			<img id="n_801315_glass_magnifier_magni_" src="{{ url_for('static', filename='images/n_801315_glass_magnifier_magni_.png') }}">
+				
+			<div id="n___">
+				<span>수어 : </span>
+				<span id="sign_text" style="font-family:Source Han Sans K;font-style:normal;font-weight:bold;">커피</span>
+			</div>
+			<div id="n__bb">
+				<span>수형 설명</span>
+			</div>
+			<div id="n__bc">
+				<span>나의 학습률</span>
+			</div>
+			<!-- <div id="Text_bc">
+				<span>결합정보</span>
+			</div> -->
+			<svg class="n_9">
+				<ellipse id="n_9" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
+				</ellipse>
+			</svg>
+			<svg class="n_11">
+				<ellipse id="n_11" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
+				</ellipse>
+			</svg>
+			<svg class="n_10">
+				<!-- <ellipse id="n_10" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
+				</ellipse> -->
+			</svg>
+			<div id="n__1__________________________">
+				<span id="detail"></span>
+			</div>
 
-            <div id="n__">
-                <span id="start">학습 시작</span>
-            </div>
-            <div id="n__ba">
-                <span id="on_off">웹캠 켜기</span>
-            </div>
-            <svg class="n_27">
-                <rect id="n_27" rx="12" ry="12" x="0" y="0" width="674" height="271">
-                </rect>
-            </svg>
-            <svg class="n_28">
-                <rect id="n_28" rx="12" ry="12" x="0" y="0" width="674" height="271">
-                </rect>
-            </svg>
-            <img id="n_801315_glass_magnifier_magni_ba" src="{{ url_for('static', filename='images/n_801315_glass_magnifier_magni_ba.png') }}">
-                
-            <div id="n____bb">
-                <span>수어 : </span>
-                <span id="sign_text" style="font-family:Source Han Sans K;font-style:normal;font-weight:bold;"></span>
-            </div>
-            <div id="n__bc">
-                <span>수형 설명</span>
-            </div>
-            <div id="n__bd">
-                <span>나의 학습률</span>
-            </div>
-            <!-- <div id="Text_be">
-                <span>결합정보</span>
-            </div> -->
-            <svg class="n_9">
-                <ellipse id="n_9" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
-                </ellipse>
-            </svg>
-            <svg class="n_11">
-                <ellipse id="n_11" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
-                </ellipse>
-            </svg>
-            <svg class="n_10">
-                <!-- <ellipse id="n_10" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
-                </ellipse> -->
-            </svg>
-            <div id="n__1__________________________" >
-                <span id="detail"></span>
-            </div>
-            <!-- <div id="n____Coffee_Co_____">
-                <span>[코(숨을 쉬는 기관 '코'를 Coffee의 'Co'로 빌려서 씀 + 차] </span>
-            </div> -->
-            <!-- <img id="Rectangle" src="{{ url_for('static', filename='images/Rectangle.png') }}"> -->
-                
-            <!-- 프로그래스바 삽입 -->
-            <!-- <svg class="n_29">
-                <rect id="n_29" rx="12" ry="12" x="0" y="0" width="605" height="50">
-                </rect>
-            </svg> -->
-            <div class="n_29">
+			<!-- <div id="n____Coffee_Co_____">
+				<span>[코(숨을 쉬는 기관 '코'를 Coffee의 'Co'로 빌려서 씀 + 차] </span>
+			</div> -->
+			<!-- <img id="Rectangle" src="{{ url_for('static', filename='images/Rectangle.png') }}">
+				 -->
+			<!-- <svg class="n_29">
+				<rect id="n_29" rx="12" ry="12" x="0" y="0" width="605" height="50">
+				</rect>
+			</svg> -->
+			<div class="n_29">
                 <span class="progressbar">
                     <span id="progress"></span>
                 </span>
             </div>
-            
-
-            <!-- <svg class="n_30">
-                <rect id="n_30" rx="12" ry="12" x="0" y="0" width="457" height="34">
-                </rect>
-            </svg> -->
 
 
-            <div id="n_2_">
-                <span id="persent"></span>
-            </div>
-            <div id="n___bo">
-                <span>잘 따라오고 있어요!</span>
-            </div>
-            <div id="n____bp">
-                <span>현재 나의 정확도</span>
-            </div>
-            <svg class="n_12">
-                <ellipse id="n_12" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
-                </ellipse>
-            </svg>
-            <div id="n_____">
-                <span>정확한 동작을 표현해야 해요! </span>
-            </div>
-            <img id="n_1_bs" src="{{ url_for('static', filename='images/n_1_bs.png') }}" >
-                
-            <div id="n__bt">
-                <span>수형 사진</span>
-            </div>
-            <!-- <img id="n_2_bu" src="{{ url_for('static', filename='images/n_2_bu.png') }}" > -->
-                
-            <svg class="n_2_bv" viewBox="0 0 347 1">
-                <path id="n_2_bv" d="M 0 0 L 347 0">
-                </path>
-            </svg>
-            <svg class="n_2_bw" viewBox="5721.613 808.492 8.75 17.5">
-                <path id="n_2_bw" d="M 5721.61328125 808.4916381835938 L 5730.36376953125 817.241455078125 L 5721.61328125 825.9912109375">
-                </path>
-            </svg>
-            <svg class="n_31">
-                <rect id="n_31" rx="18" ry="18" x="0" y="0" width="36" height="36">
-                </rect>
-            </svg>
-            <svg class="n_32">
-                <rect id="n_32" rx="18" ry="18" x="0" y="0" width="36" height="36">
-                </rect>
-            </svg>
-            <svg class="n_33">
-                <rect id="n_33" rx="18" ry="18" x="0" y="0" width="36" height="36">
-                </rect>
-            </svg>
-            <svg class="n_34">
-                <rect id="n_34" rx="18" ry="18" x="0" y="0" width="36" height="36">
-                </rect>
-            </svg>
-            <svg class="n_35">
-                <rect id="n_35" rx="18" ry="18" x="0" y="0" width="36" height="36">
-                </rect>
-            </svg>
-            <div id="Text_b">
-                <span>아이콘</span>
-            </div>
-            <div id="Text_ca">
-                <span>아이콘</span>
-            </div>
-            <div id="Text_cb">
-                <span>아이콘</span>
-            </div>
-            <div id="Text_cc">
-                <span>아이콘</span>
-            </div>
-            <div id="Text_cd">
-                <span>아이콘</span>
-            </div>
-        </div>
 
-        <script src="{{ url_for('static', filename='js/education.js') }}"></script>
+			<!-- <svg class="n_30">
+				<rect id="n_30" rx="12" ry="12" x="0" y="0" width="457" height="34">
+				</rect>
+			</svg> -->
+			<div id="n_2_">
+				<span id="persent"></span>
+			</div>
+			<div id="n___bm">
+				<span>잘 따라오고 있어요!</span>
+			</div>
+			<div id="n____bn">
+				<span>현재 나의 정확도 </span>
+			</div>
+			<svg class="n_12">
+				<ellipse id="n_12" rx="5.5" ry="5.5" cx="5.5" cy="5.5">
+				</ellipse>
+			</svg>
+			<div id="n_____">
+				<span>정확한 동작을 표현해야 해요! </span>
+			</div>
+			<img id="n_1_bq" src="{{ url_for('static', filename='images/n_1_bq.png') }}">
+				
+			<div id="n__br">
+				<span>수형 사진</span>
+			</div>
+			<div id="Text_bs">
+				<span>목록보기</span>
+			</div>
+			<!-- <img id="n_2_bt" src="{{ url_for('static', filename='images/n_2_bt.png') }}"> -->
+				
+			<svg class="n_2_bu" viewBox="0 0 346 1">
+				<path id="n_2_bu" d="M 0 0 L 346 0">
+				</path>
+			</svg>
+			<img id="n_666802_menu_navigation_icon" src="{{ url_for('static', filename='images/n_666802_menu_navigation_icon.png') }}" >
+				
+			<img id="n_781824_alarm_alert_attention" src="{{ url_for('static', filename='images/n_781824_alarm_alert_attention.png') }}" >
+				
+			<img id="n_666609_user_icon" src="{{ url_for('static', filename='images/n_666609_user_icon.png') }}" >
+				
+			<img id="n_666805_bookmark_favourite_ic" src="{{ url_for('static', filename='images/n_666805_bookmark_favourite_ic.png') }}" >
+				
+			<img id="n_666756_video_camera_icon" src="{{ url_for('static', filename='images/n_666756_video_camera_icon.png') }}" >
+				
+			<img id="n_666774_maximize_expand_icon" src="{{ url_for('static', filename='images/n_666774_maximize_expand_icon.png') }}" >
+				
+			<img id="n_666774_maximize_expand_icon_b" src="{{ url_for('static', filename='images/n_666774_maximize_expand_icon_b.png') }}" >
+				
+			<img id="n_666787_file_document_icon" src="{{ url_for('static', filename='images/n_666787_file_document_icon.png') }}" >
+				
+			<img id="n_643771_configuration_configu" src="{{ url_for('static', filename='images/n_643771_configuration_configu.png') }}" >
+				
+			<img id="n_199097_edit_draw_pen_pencil_" src="{{ url_for('static', filename='images/n_199097_edit_draw_pen_pencil_.png') }}" >
+				
+			<svg class="n_3" viewBox="0 0 144.112 125.078">
+				<path id="n_3" d="M 72.05597686767578 0 L 144.1119689941406 125.0783081054688 L 0 125.0783081054688 Z">
+				</path>
+			</svg>
+			<div id="n____b">
+				<span>쉽고 간편한 수어 프로그램</span>
+			</div>
+			<img id="n_2_b" src="{{ url_for('static', filename='images/n_2_b.png') }}">
+				
+			<img id="n_3_b" src="{{ url_for('static', filename='images/n_3_b.png') }}">
+				
+		</div>
+
+		<script src="{{ url_for('static', filename='js/education.js') }}"></script>
         <script src="{{ url_for('static', filename='js/video.js') }}"></script>
-        
-    </body>
+
+	</body>
 </html>

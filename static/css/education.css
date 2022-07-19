@@ -1,5 +1,5 @@
 .mediaViewInfo {
-    --web-view-name: 2;
+    --web-view-name: 학습화면 로고;
     --web-view-id: n_;
     --web-scale-on-resize: true;
     --web-enable-deep-linking: true;
@@ -19,51 +19,12 @@
     height: 1080px;
     background-color: rgba(255,255,255,1);
     overflow: hidden;
-    --web-view-name: 2;
+    --web-view-name: 학습화면 로고;
     --web-view-id: n_;
     --web-scale-on-resize: true;
     --web-enable-deep-linking: true;
 }
 #n_1 {
-    fill: rgba(248,65,65,0.749);
-}
-.n_1 {
-    position: absolute;
-    overflow: visible;
-    width: 50px;
-    height: 48px;
-    left: 80px;
-    top: 52px;
-}
-#Text {
-    left: 142px;
-    top: 53px;
-    position: absolute;
-    overflow: visible;
-    width: 114px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Joongnajoche OTF;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 27px;
-    color: rgba(0,0,0,1);
-}
-#n___ {
-    left: 142px;
-    top: 81px;
-    position: absolute;
-    overflow: visible;
-    width: 134px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: S-Core Dream 4;
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 12px;
-    color: rgba(117,111,111,1);
-}
-#n_1_o {
     fill: transparent;
     stroke: rgba(112,112,112,0.729);
     stroke-width: 0.800000011920929px;
@@ -72,7 +33,7 @@
     stroke-miterlimit: 4;
     shape-rendering: auto;
 }
-.n_1_o {
+.n_1 {
     overflow: visible;
     position: absolute;
     width: 0.8px;
@@ -81,7 +42,7 @@
     top: 56.75px;
     transform: matrix(1,0,0,1,0,0);
 }
-#Text_p {
+#Text {
     left: 719px;
     top: 57px;
     position: absolute;
@@ -95,20 +56,6 @@
     font-size: 24px;
     color: rgba(0,0,0,1);
     text-transform: uppercase;
-}
-#LOGO {
-    left: 91px;
-    top: 70px;
-    position: absolute;
-    overflow: visible;
-    width: 30px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: LH B;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-    color: rgba(0,0,0,1);
 }
 #Text_r {
     left: 416px;
@@ -229,22 +176,6 @@
     left: 0px;
     top: 125px;
 }
-#n_904653_alarm_alert_bell_noti {
-    position: absolute;
-    width: 46px;
-    height: 46px;
-    left: 1794px;
-    top: 50px;
-    overflow: visible;
-}
-#n_867954_user_icon {
-    position: absolute;
-    width: 46px;
-    height: 46px;
-    left: 1726px;
-    top: 50px;
-    overflow: visible;
-}
 #n_15 {
     fill: rgba(242,242,242,1);
 }
@@ -306,7 +237,7 @@
     width: 215px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -320,11 +251,11 @@
     width: 215px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
-    color: rgb(29, 206, 41);
+    color: rgb(36, 205, 81);
 }
 #n_27 {
     fill: rgba(238,238,238,1);
@@ -348,7 +279,7 @@
     left: 406px;
     top: 625px;
 }
-#n_801315_glass_magnifier_magni_ba {
+#n_801315_glass_magnifier_magni_ {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -356,7 +287,7 @@
     top: 138px;
     overflow: visible;
 }
-#n____bb {
+#n___ {
     left: 446px;
     top: 132px;
     position: absolute;
@@ -370,7 +301,7 @@
     font-size: 26px;
     color: rgba(0,0,0,1);
 }
-#n__bc {
+#n__bb {
     left: 455px;
     top: 642px;
     position: absolute;
@@ -378,13 +309,13 @@
     width: 95px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: Source Han Sans K;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
     color: rgba(0,0,0,1);
 }
-#n__bd {
+#n__bc {
     left: 1239px;
     top: 646px;
     position: absolute;
@@ -392,13 +323,13 @@
     width: 117px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: Source Han Sans K;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
     color: rgba(0,0,0,1);
 }
-#Text_be {
+#Text_bc {
     left: 455px;
     top: 790px;
     position: absolute;
@@ -406,7 +337,7 @@
     width: 89px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: Source Han Sans K;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -459,7 +390,6 @@
     font-weight: normal;
     font-size: 24px;
     color: rgba(0,0,0,1);
-    
 }
 #n____Coffee_Co_____ {
     left: 455px;
@@ -477,8 +407,8 @@
 }
 #Rectangle {
     position: absolute;
-    width: 22px;
-    height: 22px;
+    width: 23px;
+    height: 23px;
     left: 416px;
     top: 558px;
     overflow: visible;
@@ -499,22 +429,6 @@
     height: 50px;
     left: 1235px;
     top: 728px;
-}
-.progressbar {
-    display: inline-block;
-    width: 520px;
-    height: 50px;
-    background-color: #ffffff;
-    border: 1px solid rgb(9, 71, 9);
-    border-radius: 10px;
-}
-#progress{
-    display: inline-block;
-    width: 0%;
-    height: 44px;
-    background-color: #0fb64a;
-    border-radius: 10px;
-    margin-top:2px;
 }
 #n_30 {
     fill: rgba(250,112,112,1);
@@ -549,7 +463,7 @@
     color: rgba(0,0,0,1);
     letter-spacing: 0.6px;
 }
-#n___bo {
+#n___bm {
     left: 1239px;
     top: 687px;
     position: absolute;
@@ -563,7 +477,7 @@
     font-size: 24px;
     color: rgba(0,0,0,1);
 }
-#n____bp {
+#n____bn {
     left: 1239px;
     top: 797px;
     position: absolute;
@@ -571,7 +485,7 @@
     width: 172px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: Source Han Sans K;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -602,37 +516,53 @@
     font-size: 24px;
     color: rgba(0,0,0,1);
 }
-#n_1_bs {
+#n_1_bq {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.18));
     position: absolute;
     width: 266px;
     height: 405.085px;
     left: 40px;
-    top: 234px;
+    top: 231px;
     overflow: visible;
 }
-#n__bt {
+#n__br {
     left: 40px;
     top: 185px;
     position: absolute;
     overflow: visible;
-    width: 95px;
+    width: 87px;
     white-space: nowrap;
     text-align: left;
     font-family: Source Han Sans KR;
     font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(55,55,55,1);
+}
+#Text_bs {
+    left: 72px;
+    top: 132px;
+    position: absolute;
+    overflow: visible;
+    width: 82px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Source Han Sans K;
+    font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
     color: rgba(0,0,0,1);
 }
-#n_2_bu {
+#n_2_bt {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.18));
     position: absolute;
     width: 266px;
     height: 329.67px;
     left: 40px;
-    top: 662.085px;
+    top: 659.085px;
     overflow: visible;
 }
-#n_2_bv {
+#n_2_bu {
     fill: transparent;
     stroke: rgba(112,112,112,1);
     stroke-width: 1px;
@@ -641,166 +571,152 @@
     stroke-miterlimit: 4;
     shape-rendering: auto;
 }
-.n_2_bv {
+.n_2_bu {
     overflow: visible;
     position: absolute;
-    width: 347px;
+    width: 346px;
     height: 1px;
-    left: -1px;
-    top: 176px;
+    left: 0px;
+    top: 175px;
     transform: matrix(1,0,0,1,0,0);
 }
-#n_2_bw {
-    opacity: 0.9;
-    fill: transparent;
-    stroke: rgba(0,0,0,1);
-    stroke-width: 2px;
-    stroke-linejoin: miter;
-    stroke-linecap: square;
-    stroke-miterlimit: 4;
-    shape-rendering: auto;
+#n_666802_menu_navigation_icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 40px;
+    top: 138px;
+    overflow: visible;
 }
-.n_2_bw {
+#n_781824_alarm_alert_attention {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: 1794px;
+    top: 50px;
+    overflow: visible;
+}
+#n_666609_user_icon {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 1731px;
+    top: 50px;
+    overflow: visible;
+}
+#n_666805_bookmark_favourite_ic {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 1655px;
+    top: 142px;
+    overflow: visible;
+}
+#n_666756_video_camera_icon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 1196px;
+    top: 558px;
+    overflow: visible;
+}
+#n_666774_maximize_expand_icon {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 448px;
+    top: 558px;
+    overflow: visible;
+}
+#n_666774_maximize_expand_icon_b {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 1228px;
+    top: 558px;
+    overflow: visible;
+}
+#n_666787_file_document_icon {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 1708px;
+    top: 142px;
+    overflow: visible;
+}
+#n_643771_configuration_configu {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 1761px;
+    top: 142px;
+    overflow: visible;
+}
+#n_199097_edit_draw_pen_pencil_ {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 1814px;
+    top: 142px;
+    overflow: visible;
+}
+#n_3 {
+    fill: rgba(250,112,112,1);
+}
+.n_3 {
     overflow: visible;
     position: absolute;
-    width: 8.75px;
-    height: 17.5px;
-    transform: matrix(1,0,0,1,146.3745,195.6255) rotate(90deg);
+    width: 144.112px;
+    height: 125.078px;
+    transform: matrix(1,0,0,1,1847.944,1000.722) rotate(19deg);
     transform-origin: center;
     left: 0px;
     top: 0px;
 }
-#n_31 {
-    fill: rgba(183,183,183,0.839);
-}
-.n_31 {
+#n____b {
+    left: 142px;
+    top: 81px;
     position: absolute;
     overflow: visible;
-    width: 36px;
-    height: 36px;
-    left: 37px;
-    top: 133px;
-}
-#n_32 {
-    fill: rgba(183,183,183,0.839);
-}
-.n_32 {
-    position: absolute;
-    overflow: visible;
-    width: 36px;
-    height: 36px;
-    left: 94px;
-    top: 133px;
-}
-#n_33 {
-    fill: rgba(183,183,183,0.839);
-}
-.n_33 {
-    position: absolute;
-    overflow: visible;
-    width: 36px;
-    height: 36px;
-    left: 151px;
-    top: 133px;
-}
-#n_34 {
-    fill: rgba(183,183,183,0.839);
-}
-.n_34 {
-    position: absolute;
-    overflow: visible;
-    width: 36px;
-    height: 36px;
-    left: 208px;
-    top: 133px;
-}
-#n_35 {
-    fill: rgba(183,183,183,0.839);
-}
-.n_35 {
-    position: absolute;
-    overflow: visible;
-    width: 36px;
-    height: 36px;
-    left: 265px;
-    top: 133px;
-}
-#Text_b {
-    left: 44px;
-    top: 144px;
-    position: absolute;
-    overflow: visible;
-    width: 23px;
+    width: 138px;
     white-space: nowrap;
     text-align: left;
-    font-family: Source Han Sans KR;
+    font-family: S-Core Dream 4;
     font-style: normal;
-    font-weight: bold;
-    font-size: 8px;
-    color: rgba(255,255,255,1);
+    font-weight: lighter;
+    font-size: 12px;
+    color: rgba(117,111,111,1);
 }
-#Text_ca {
-    left: 101px;
-    top: 144px;
+#n_2_b {
     position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 80px;
+    top: 50px;
     overflow: visible;
-    width: 23px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Source Han Sans KR;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 8px;
-    color: rgba(255,255,255,1);
 }
-#Text_cb {
-    left: 158px;
-    top: 144px;
+#n_3_b {
     position: absolute;
+    width: 95.959px;
+    height: 27px;
+    left: 142px;
+    top: 50px;
     overflow: visible;
-    width: 23px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Source Han Sans KR;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 8px;
-    color: rgba(255,255,255,1);
-}
-#Text_cc {
-    left: 215px;
-    top: 144px;
-    position: absolute;
-    overflow: visible;
-    width: 23px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Source Han Sans KR;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 8px;
-    color: rgba(255,255,255,1);
-}
-#Text_cd {
-    left: 272px;
-    top: 144px;
-    position: absolute;
-    overflow: visible;
-    width: 23px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Source Han Sans KR;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 8px;
-    color: rgba(255,255,255,1);
 }
 
-a:visited {
-    color : black;
-    text-decoration: none;
+.progressbar {
+    display: inline-block;
+    width: 520px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1px solid rgb(9, 71, 9);
+    border-radius: 10px;
 }
-a:hover {
-    color : red;
-    text-decoration: underline;
-  }
+#progress{
+    display: inline-block;
+    width: 0%;
+    height: 44px;
+    background-color: #0fb64a;
+    border-radius: 10px;
+    margin-top:2px;
+}

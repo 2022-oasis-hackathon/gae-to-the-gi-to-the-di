@@ -63,7 +63,7 @@ function now_text(){
     document.getElementById('sign_text').innerHTML=keys[number];
     document.getElementById('n__1__________________________').innerHTML=array2[keys[number]];
 
-    document.getElementById('n_1_bs').src= '/static/images/' + keys[number] + '.jpg'
+    document.getElementById('n_1_bq').src= '/static/images/' + keys[number] + '.jpg'
 
 }
 
