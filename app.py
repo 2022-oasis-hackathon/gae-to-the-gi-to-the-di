@@ -73,11 +73,19 @@ def test():
 @app.route('/video_feed')
 def video_feed():
     global cap
+    
+    #a = sign2.action_test_print()
+    
+    
     return Response(sign2.gen(cap),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-
+@app.route('/text_input', methods=('GET', 'POST'))
+def text_input():
+    if request.method == "POST":
+        
+        return sign2.action_test_print()
 
 if __name__ == '__main__':
     app.run(debug=True) # 

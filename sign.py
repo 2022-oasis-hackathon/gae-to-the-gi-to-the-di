@@ -75,7 +75,7 @@ def image():
     # 이미지에서 골격 체크
     with mp_pose.Pose(
         static_image_mode=True,
-        model_complexity=2,
+        model_complexity=0,
         enable_segmentation=True,
         min_detection_confidence=0.5) as pose:
         

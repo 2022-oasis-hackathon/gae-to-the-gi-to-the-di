@@ -29,6 +29,13 @@ hands = mp_hands.Hands(
 actions = [ '안녕하세요', '여러분', '발표', '시작', '오늘', '하루', '어떻게', '보내다']
 #actions = ['everyone','hello','presentation','start','how','today', 'day','spend']
 
+action_text = ""
+def action_test_print():
+    global action_text
+    
+    
+    return action_text
+
 seq = []
 seq_length = 30
 action_seq = []
@@ -101,6 +108,8 @@ def output_label():
             
 def gen(video):
     
+    global action_text
+    
     while video.isOpened():
         success, img = video.read()
         img = cv2.flip(img, 1)
@@ -168,5 +177,7 @@ def gen(video):
                 if flag: this_action = action 
                 if this_action != '?' : 
                     print(this_action)
+                    action_text = this_action
+                
             
                     
