@@ -510,7 +510,7 @@
 }
 #progress{
     display: inline-block;
-    width: 85%;
+    width: 0%;
     height: 44px;
     background-color: #0fb64a;
     border-radius: 10px;

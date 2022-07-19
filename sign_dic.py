@@ -63,7 +63,8 @@ def check(landmarks, landmarks2, rps_result):
             if abs(landmarks2[0].landmark[4].y - landmarks[10].y) < 0.15:
                 if abs(landmarks[10].x - landmarks2[0].landmark[8].x) < 0.15 and abs(landmarks[9].x - landmarks2[0].landmark[4].x) < 0.15:
                     if landmarks2[0].landmark[8].y <landmarks2[0].landmark[6].y:
-                        return 3
+                        if abs(landmarks2[0].landmark[4].y - landmarks[0].y) > 0.1:
+                            return 3
     
     # 괜찮습니다
     
@@ -167,7 +168,8 @@ def check(landmarks, landmarks2, rps_result):
         if landmarks2[0].landmark[4].y < landmarks2[0].landmark[8].y:
             if landmarks2[0].landmark[8].x < landmarks[10].x and landmarks2[0].landmark[12].x < landmarks[10].x and landmarks2[0].landmark[16].x < landmarks[10].x:
                 if landmarks[9].x < landmarks2[0].landmark[4].x:
-                    return 16
+                    if abs(landmarks2[0].landmark[4].y - landmarks[0].y) > 0.1:
+                        return 16
     
     # 같이
     

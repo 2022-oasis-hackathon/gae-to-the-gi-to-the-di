@@ -97,6 +97,7 @@ def image():
                 
                 # 사람이 없으면? 함수 종료
                 if not results.pose_landmarks:
+                    checklist = [0 for i in range(len(checklist))]  
                     return 
                 
                 # 포즈 랜드마크 저장
@@ -257,9 +258,9 @@ def image():
                         checklist = [0 for i in range(len(checklist))]  
                         return array[17]   
                         
-                    # 아무 행동도 없을 시 초기화
-                    elif none_count > 5:
-                        checklist = [0 for i in range(len(checklist))]
-                        none_count = 0
+                # 아무 행동도 없을 시 초기화
+                elif none_count > 5:
+                    checklist = [0 for i in range(len(checklist))]
+                    none_count = 0
            
             

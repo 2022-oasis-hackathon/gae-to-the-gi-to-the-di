@@ -49,16 +49,22 @@ function data_ajax(){
         if (text == keys[number]){
             
             number = number + 1;
-            if (number == keys.length){
+
+            if (number == keys.length){ //종료
                 start.style.display = 'block';
                 source.src = "";
                 edu_video.load();
                 
                 document.getElementById('sign_text').innerHTML="";
                 document.getElementById('n__1__________________________').innerHTML="";
+                document.getElementById('progress').style.width = Math.round((number / keys.length) * 100) + '%';
+                document.getElementById('persent').innerHTML = Math.round((number / keys.length) * 100) + '%';
             }
+
             else{
                 now_text();
+                document.getElementById('progress').style.width = Math.round((number / keys.length) * 100) + '%';
+                document.getElementById('persent').innerHTML = Math.round((number / keys.length) * 100) + '%';
             }
             
         }
