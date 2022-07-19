@@ -1,3 +1,4 @@
+from pickle import FALSE
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -46,15 +47,24 @@ cap = cv2.VideoCapture(0)
 seq = []
 action_seq = []
 
-while cap.isOpened():
-    ret, img = cap.read()
-    img0 = img.copy()
+# # 이미지 변수 저장
+# def input_image(video):
+#     ret, img = video.read() # cv2
+#     img = cv2.flip(img, 1)
+#     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+#     result = hands.process(img)
+#     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
+#     return img, result
+
+while cap.isOpened():
+    #img, result = input_image(cap)
+    ret, img = cap.read() # cv2
     img = cv2.flip(img, 1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     result = hands.process(img)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-    
+
     if result.multi_hand_landmarks is not None:
         for res in result.multi_hand_landmarks:
             joint = np.zeros((21, 4))
@@ -74,19 +84,16 @@ while cap.isOpened():
                 v[[1,2,3,5,6,7,9,10,11,13,14,15,17,18,19],:])) # [15,]
 
             angle = np.degrees(angle) # Convert radian to degree
-
             d = np.concatenate([joint.flatten(), angle])
-
             seq.append(d)
 
             mp_drawing.draw_landmarks(img, res, mp_hands.HAND_CONNECTIONS)
             
-            if len(seq) < seq_length:
+            if len(seq) < seq_length: 
                 continue
             
             input_data = np.expand_dims(np.array(seq[-seq_length:], dtype=np.float32), axis=0)
             y_pred = model.predict(input_data).squeeze()
-
             i_pred = int(np.argmax(y_pred))
             conf = y_pred[i_pred]
             if conf < 0.9:
@@ -99,13 +106,18 @@ while cap.isOpened():
                 continue
 
             this_action = '?'
-            if action_seq[-1] == action_seq[-2] == action_seq[-3]:
-                this_action = action
-
-            cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
+            
+            flag = True
+            for i in action_seq[-3:]:
+                if action != i:
+                    flag = False
+                    break
+            if flag: this_action = action 
+            if this_action != '?' : print(this_action)
 
     # out.write(img0)
     # out2.write(img)
+
     cv2.imshow('img', img)
     if cv2.waitKey(1) == ord('q'):
         break

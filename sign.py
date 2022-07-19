@@ -70,7 +70,6 @@ def image():
     
     global checklist, none_count
     
-    
     IMAGE_FILES = ['canvas.png']
     
     # 이미지에서 골격 체크

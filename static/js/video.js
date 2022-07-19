@@ -26,7 +26,6 @@ function loop(){
     ctx.restore();
 
     requestId = requestAnimationFrame(loop); 
-
 };
 
 
