@@ -100,7 +100,6 @@ def output_label():
             if this_action != '?' : return this_action
             
 def gen(video):
-    
     while video.isOpened():
         success, img = video.read()
         img = cv2.flip(img, 1)
@@ -167,6 +166,6 @@ def gen(video):
                     
                 if flag: this_action = action 
                 if this_action != '?' : 
-                    print(this_action)
+                    return this_action
             
-                    
+                        

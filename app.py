@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, stream_with_context
 import base64
 from PIL import Image
 import re
@@ -6,12 +6,14 @@ from io import BytesIO
 import cv2
 
 # 파일 import
-import sign, sign2
+import sign, sign2,webcam
 
-cap = cv2.VideoCapture(0)
 
 app = Flask(__name__)
+cap = cv2.VideoCapture(0)
 
+def generate_frames():
+    sucsess, frame = cap.read()
 
 @app.route('/') # 홈페이지
 def index():
@@ -47,7 +49,6 @@ def translation():
 
 @app.route('/canvas_image2', methods=('GET', 'POST')) # ajax로 0.1초마다 이미지 받아옴 // 이미지 전송, 응답 라우트
 def canvas_image2():
-    
     # 클라이언트에서 요청이 있으면
     if request.method == "POST":
         
@@ -70,14 +71,34 @@ def test():
 
 
 
+streamer = webcam.Streamer()
+
 @app.route('/video_feed')
-def video_feed():
-    global cap
-    return Response(sign2.gen(cap),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+# def video_feed():
+#     global cap
+#     return Response(sign2.gen(cap),
+#                     mimetype='multipart/x-mixed-replace; boundary=frame')
+def stream(): 
+    src = request.args.get( 'src', default = 0, type = int )
+    try :  
+        return Response(
+            stream_with_context( stream_gen( src ) ),
+            mimetype='multipart/x-mixed-replace; boundary=frame' )
+        
+    except Exception as e :
+        print('[wandlab] ', 'stream error : ',str(e))
 
-
-
+def stream_gen( src ):   
+    try :    
+        streamer.run( src )
+        while True :     
+            frame = streamer.bytescode()
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+                    
+    except GeneratorExit :
+        #print( '[wandlab]', 'disconnected stream' )
+        streamer.stop()
 
 if __name__ == '__main__':
     app.run(debug=True) # 
