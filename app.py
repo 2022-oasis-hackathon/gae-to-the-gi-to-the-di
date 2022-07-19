@@ -12,10 +12,8 @@ import sign, sign2,webcam
 app = Flask(__name__)
 cap = cv2.VideoCapture(0)
 
-def generate_frames():
-    sucsess, frame = cap.read()
-
 @app.route('/') # 홈페이지
+
 def index():
     return render_template('index.html')
 
@@ -71,34 +69,22 @@ def test():
 
 
 
-streamer = webcam.Streamer()
-
 @app.route('/video_feed')
-# def video_feed():
-#     global cap
-#     return Response(sign2.gen(cap),
-#                     mimetype='multipart/x-mixed-replace; boundary=frame')
-def stream(): 
-    src = request.args.get( 'src', default = 0, type = int )
-    try :  
-        return Response(
-            stream_with_context( stream_gen( src ) ),
-            mimetype='multipart/x-mixed-replace; boundary=frame' )
-        
-    except Exception as e :
-        print('[wandlab] ', 'stream error : ',str(e))
+def video_feed():
+    global cap
+    
+    #a = sign2.action_test_print()
+    
+    
+    return Response(sign2.gen(cap),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
-def stream_gen( src ):   
-    try :    
-        streamer.run( src )
-        while True :     
-            frame = streamer.bytescode()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-                    
-    except GeneratorExit :
-        #print( '[wandlab]', 'disconnected stream' )
-        streamer.stop()
+
+@app.route('/text_input', methods=('GET', 'POST'))
+def text_input():
+    if request.method == "POST":
+        
+        return sign2.action_test_print()
 
 if __name__ == '__main__':
     app.run(debug=True) # 
