@@ -40,7 +40,7 @@ canvas.addEventListener('click', ()=>{
 
             //그리기 반복
             requestId = window.requestAnimationFrame(loop); 
-            interval = setInterval((data_ajax),100)
+            interval = setInterval((data_ajax),500)
             
         })
         .catch( (error)=>{
@@ -65,7 +65,7 @@ canvas.addEventListener('click', ()=>{
         window.cancelAnimationFrame(requestId);    
         requestId = undefined;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        edu_video_btn.style.display = 'block';
+        // edu_video_btn.style.display = 'block';
 
     } 
     

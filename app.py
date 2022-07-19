@@ -37,7 +37,6 @@ def canvas_image():
         text = sign.image() # 골격 정보 체크 함수
         if text == None:
             text = ""
-        
     return text
 
 @app.route('/translation') # 번역 페이지
@@ -61,7 +60,6 @@ def canvas_image2():
         text = sign2.output_label() # 단어 정보 체크 함수, 이미지 객체
         if text == None:
             text = ""
-        
     return text
 
 @app.route('/test') # 시험 페이지 
