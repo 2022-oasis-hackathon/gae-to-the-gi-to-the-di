@@ -1,7 +1,25 @@
 var answer = document.getElementById('answer');
+var score = document.getElementById('score');
+var word = document.getElementById('word');
 
+answer.innerHTML = "X";
+score.innerHTML = "0";
+word.innerHTML = "여러분";
 
-answer.innerHTML = "";
+// 이미지 부분
+// const arr = {
+//     '여러분' : ,
+//     '안녕하세요' : , 
+//     '발표' : , 
+//     '시작' : , 
+//     '어떻게' : , 
+//     '오늘' : , 
+//     '하루' : , 
+//     '보내다' : 
+// }
+
+const arr = [ '여러분', '안녕하세요', '발표', '시작', '어떻게', '오늘', '하루', '보내다'];
+var idx = 0;
 
 function data_ajax_input(){
     $.ajax({
@@ -11,8 +29,16 @@ function data_ajax_input(){
         
         }
     }).done(function(text) {
-        console.log(text)
-        
+        word.innerHTML = arr[idx];
+
+        if (text == arr[idx]){
+            answer.innerHTML = 'O';
+            idx += 1;
+            score.innerHTML = idx;
+        }
+        else {
+            answer.innerHTML = 'X';
+        }
     })
 }
 

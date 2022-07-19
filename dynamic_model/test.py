@@ -113,7 +113,15 @@ while cap.isOpened():
                     flag = False
                     break
             if flag: this_action = action 
-            if this_action != '?' : print(this_action)
+            #if this_action != '?' : print(this_action)
+            cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
+
+    # out.write(img0)
+    # out2.write(img)
+    cv2.imshow('img', img)
+    if cv2.waitKey(1) == ord('q'):
+        break
+
 
     # out.write(img0)
     # out2.write(img)

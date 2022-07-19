@@ -26,8 +26,8 @@ hands = mp_hands.Hands(
 
 #cap = cv2.VideoCapture(0)
 
-actions = [ '안녕하세요', '여러분', '발표', '시작', '오늘', '하루', '어떻게', '보내다']
-#actions = ['everyone','hello','presentation','start','how','today', 'day','spend']
+actions = [ '여러분', '안녕하세요', '발표', '시작', '어떻게', '오늘', '하루', '보내다']
+eng_actions = ['everyone','hello','presentation','start','how','today', 'day','spend']
 
 action_text = ""
 def action_test_print():
@@ -160,7 +160,7 @@ def gen(video):
                 this_action = '?'
                 
                 flag = True
-                for i in action_seq[-3:]:
+                for i in action_seq[-5:]:
                     if action != i:
                         flag = False
                         break
@@ -168,7 +168,8 @@ def gen(video):
                 if flag: this_action = action 
                 if this_action != '?' : 
                     action_text = this_action
-                    
+                
+                #cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
                     
                             # 웹캠 이미지 전송
                 

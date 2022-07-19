@@ -335,6 +335,7 @@
     fill: rgba(238,238,238,1);
 }
 .n_26 {
+    text-align: center;
     position: absolute;
     overflow: visible;
     width: 353.333px;
@@ -507,7 +508,7 @@
     overflow: visible;
     width: 117px;
     white-space: nowrap;
-    text-align: left;
+    text-align: center;
     font-family: Source Han Sans KR;
     font-style: normal;
     font-weight: bold;
@@ -570,13 +571,13 @@
     top: 0px;
 }
 #n__bs {
-    left: 1565px;
+    left: 1555px;
     top: 686px;
     position: absolute;
     overflow: visible;
     width: 73px;
     white-space: nowrap;
-    text-align: left;
+    text-align: center;
     font-family: Source Han Sans KR;
     font-style: normal;
     font-weight: normal;
@@ -595,7 +596,7 @@
     top: 700px;
 }
 #n_2_bu {
-    left: 1629px;
+    left: 1650px;
     top: 727px;
     position: absolute;
     overflow: visible;
@@ -616,7 +617,7 @@
     overflow: visible;
     width: 73px;
     white-space: nowrap;
-    text-align: left;
+    text-align: center;
     font-family: Source Han Sans KR;
     font-style: normal;
     font-weight: normal;
@@ -650,12 +651,12 @@
 }
 #X {
     left: 1659px;
-    top: 462px;
+    top: 470px;
     position: absolute;
     overflow: visible;
     width: 58px;
     white-space: nowrap;
-    text-align: left;
+    text-align: center;
     font-family: Source Han Sans KR;
     font-style: normal;
     font-weight: normal;

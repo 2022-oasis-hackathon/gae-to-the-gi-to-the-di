@@ -80,14 +80,14 @@
         <svg class="n_20">
             <rect id="n_20" rx="12" ry="12" x="0" y="0" width="1385" height="830"></rect>
         </svg>
-        <div class="n_20">
-            <canvas id="canvas" rx="12" ry="12" x="0" y="0" width="1385" height="830"></canvas>
-            <video id="video" width="674" height="404" style="display:none"></video>
-        </div>
+        <!-- <div class="n_20"> -->
+            <!-- <canvas id="canvas" rx="12" ry="12" x="0" y="0" width="1385" height="830"></canvas> -->
+        <img class="n_20" src="{{ url_for('video_feed') }}" width="674" height="404">
+        <!-- </div> -->
 
-        <div id="n__">
+        <!-- <div id="n__">
             <span>웹캠 영상</span>
-        </div>
+        </div> -->
         <div id="Text_">
             <span>번역하기</span>
         </div>
@@ -110,10 +110,10 @@
                 </ellipse>
             </svg> -->
             <p id="n______">
-                <span>인식 중입니다.. <br />화면 중앙에 서주세요</span>
+                <span id="direction">인식 중입니다.. <br />화면 중앙에 서주세요</span>
             </p>
             <p id="n__ba">
-                <span>배가 아파서 왔습니다. aaaaaaaaaaa</span>
+                <span id="answer">배가 아파서 왔습니다. aaaaaaaaaaa</span>
             </p>
         </div>
 
@@ -171,6 +171,6 @@
     </div>
 </body>
 
-<script src="{{ url_for('static', filename='js/video2.js') }}"></script>
+<script src="{{ url_for('static', filename='js/translation.js') }}"></script>
 
 </html>
