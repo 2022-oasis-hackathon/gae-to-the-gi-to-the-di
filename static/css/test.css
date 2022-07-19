@@ -475,6 +475,11 @@
     height: 122px;
     left: 1506.667px;
     top: 908px;
+    text-align: center;
+    font-family: Source Han Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
 }
 #n__bl {
     left: 1565px;
@@ -671,4 +676,9 @@ a:visited {
 a:hover {
     color : red;
     text-decoration: underline;
-  }
+}
+#a__{
+    line-height: 122px;
+    text-align: center;
+    vertical-align: middle;
+}
