@@ -12,8 +12,8 @@ cap = cv2.VideoCapture(0)
 
 app = Flask(__name__)
 
-
 @app.route('/') # 홈페이지
+
 def index():
     return render_template('index.html')
 
@@ -75,8 +75,6 @@ def video_feed():
     global cap
     return Response(sign2.gen(cap),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
 
 
 if __name__ == '__main__':
