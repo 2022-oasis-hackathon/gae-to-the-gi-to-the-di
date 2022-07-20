@@ -1,4 +1,4 @@
-# 🤞수어 플랫폼 수어? 쉬워!
+# 🤞 수어 플랫폼 수어? 쉬워!
 
 <figure>     
     <img src="./static/images/n_1_bo.png" height="100px"width="150px"
@@ -79,6 +79,10 @@ python app.py
 
 
 # 프로젝트 사용법 (Getting Started)
+
+* openCV를 이용한 영상 데이터 수집 코드가 들어있습니다.
+
+수어 인식 모델 학습을 위한 사진 데이터를 모을 수 있습니다.
 
 * LSTM 모델 가중치가 포함되어 있습니다.
 
