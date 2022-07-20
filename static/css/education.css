@@ -1,11 +1,11 @@
 .mediaViewInfo {
     --web-view-name: 학습화면 로고;
-    --web-view-id: n_;
+    --web-view-id: n_3_b;
     --web-scale-on-resize: true;
     --web-enable-deep-linking: true;
 }
 :root {
-    --web-view-ids: n_;
+    --web-view-ids: n_3_b;
 }
 * {
     margin: 0;

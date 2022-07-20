@@ -40,7 +40,9 @@
 * 권장: Google Chrome 버젼 77 이상
 
 
+![수어쉬워](https://user-images.githubusercontent.com/71615908/179908478-dec85910-d6bc-4b1e-b2f5-f7367c672035.gif)
 
+![수어쉬워2](https://user-images.githubusercontent.com/71615908/179909858-907742f8-3a08-4f9a-881f-5053316100ab.gif)
 
 
 # 기술 스택 (Technique Used)
