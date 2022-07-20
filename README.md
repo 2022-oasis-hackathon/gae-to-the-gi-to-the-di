@@ -1,4 +1,4 @@
-# 수어 플랫폼 수어? 쉬워!
+# 🤞수어 플랫폼 수어? 쉬워!
 
 <figure>     
     <img src="./static/images/n_1_bo.png" height="100px"width="150px"
